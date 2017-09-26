@@ -1,0 +1,287 @@
+<extend name="Public:layout"/>
+<block name="headlist">
+    <link rel="stylesheet" href="__PUBLIC__/Home/themes/default/default.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/plugins/code/prettify.css" />
+    <script charset="utf-8" src="__PUBLIC__/Home/js/kindeditor-all.js"></script>
+    <script charset="utf-8" src="__PUBLIC__/Home/js/zh-CN.js"></script>
+    <script charset="utf-8" src="__PUBLIC__/Home/plugins/code/prettify.js"></script>
+</block>
+<block name="main-content">
+
+				<div class="main-content">
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="__APP__">后台主页</a>
+							</li>
+
+							<li>
+								<a href="#">阿米巴课程管理</a>
+							</li>
+							<li class="active">修改课程</li>
+						</ul><!-- .breadcrumb -->
+
+					</div>
+
+					<div class="page-content">
+						<div class="page-header">
+							<h1>
+								阿米巴课程管理
+								<small>
+									<i class="icon-double-angle-right"></i>
+									修改课程
+								</small>
+							</h1>
+						</div><!-- /.page-header -->
+
+						<div class="row">
+							<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+
+								<form class="form-horizontal" role="form" method="post" action="__ACTION__" enctype="multipart/form-data">
+									<div class="form-group">
+                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 课程标题 </label>
+													
+                                            <div class="col-sm-9">
+
+                                                <input type="text" name="name" id="form-field-1" value="{$traincourse.name}" class="col-xs-10 col-sm-5" />
+                                            </div>
+                                        </div>
+
+                                         <div class="space-4"></div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 新闻原图片 </label>
+                                                    
+                                            <div class="col-sm-9">
+
+                                                <img src="__PUBLIC__/Upload/{$traincourse.icon}" width=180 height=120 alt="">
+                                            </div>
+                                        </div>
+
+                                         <div class="space-4"></div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 课程图片 </label>
+
+                                            <div class="col-sm-9">
+                                                <input type="file" name="icon" class="col-xs-10 col-sm-5" />
+                                            </div>
+                                        </div>
+
+                                        <div class="space-4"></div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 开始时间 </label>
+
+                                            <div class="col-sm-9">
+                                                <input type="text" name="starttime" id="datetimepicker" value="{$traincourse.starttime|date='Y-m-d H:i:s',###}" class="col-xs-10 col-sm-5" />
+                                            </div>
+                                        </div>
+										
+                                        <div class="space-4"></div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-11">地区</label>
+
+                                            <div class="col-sm-9">
+                                                <input type="text" value="{$traincourse.area}" name="area" class="col-xs-10 col-sm-5">
+                                            </div>
+                                        </div>
+
+                                        <div class="space-4"></div>
+
+                                         <div class="form-group">
+                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-11">地址</label>
+
+                                            <div class="col-sm-9">
+                                                <input type="text" name="address" value="{$traincourse.address}" class="col-xs-10 col-sm-5">
+                                            </div>
+                                        </div>
+                                        
+                                         <div class="space-4"></div>
+
+                                         <div class="form-group">
+                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-11">出行</label>
+
+                                            <div class="col-sm-9">
+                                                <input type="text" name="goout" value="{$traincourse.goout}" class="col-xs-10 col-sm-5">
+                                            </div>
+                                        </div>
+                                        
+                                         <div class="space-4"></div>
+
+                                         <div class="form-group">
+                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-11">语言</label>
+
+                                            <div class="col-sm-9">
+                                                <input type="text" name="language" value="{$traincourse.language}" class="col-xs-10 col-sm-5">
+                                            </div>
+                                        </div>
+                                        
+                                         <div class="space-4"></div>
+
+                                         <div class="form-group">
+                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-11">咨询</label>
+
+                                            <div class="col-sm-9">
+                                                <input type="text" name="consult" value="{$traincourse.consult}" class="col-xs-10 col-sm-5">
+                                            </div>
+                                        </div>
+                                        
+                                         <div class="space-4"></div>
+
+                                         <div class="form-group">
+                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-11">概述</label>
+
+                                            <div class="col-sm-9">
+                                               <textarea name="overview" style="width:80%;height:200px;visibility:hidden;"><?php echo htmlspecialchars($htmlData); ?>{$traincourse.overview}</textarea>
+                                            </div>
+                                        </div>
+                                        
+                                         <div class="space-4"></div>
+
+                                         <div class="form-group">
+                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-11">讲师介绍</label>
+
+                                            <div class="col-sm-9">
+                                                <textarea name="lecintroduce" style="width:80%;height:200px;visibility:hidden;"><?php echo htmlspecialchars($htmlData); ?>{$traincourse.lecintroduce}</textarea>
+                                            </div>
+                                        </div>
+                                        
+                                         <div class="space-4"></div>
+
+                                         <div class="form-group">
+                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-11">费用及优惠</label>
+
+                                            <div class="col-sm-9">
+                                                 <textarea name="discount" style="width:80%;height:200px;visibility:hidden;"><?php echo htmlspecialchars($htmlData); ?>{$traincourse.discount}</textarea>
+                                            </div>
+                                        </div>
+                                        
+                                         <div class="space-4"></div>
+
+                                         <div class="form-group">
+                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-11">纲要</label>
+
+                                            <div class="col-sm-9">
+                                                 <textarea name="outline" style="width:80%;height:200px;visibility:hidden;"><?php echo htmlspecialchars($htmlData); ?>{$traincourse.outline}</textarea>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="id" value="{$traincourse.id}">
+                                         <div class="space-4"></div>
+									<div class="space-4"></div>
+
+									
+									<div class="clearfix form-actions">
+										<div class="col-md-offset-3 col-md-9">
+											<input type="submit" class="btn btn-info"  name="sub" value="确认修改"/>
+												
+										</div>
+									</div>
+
+									<div class="hr hr-24"></div>
+
+										
+								</form>
+								<!-- PAGE CONTENT ENDS -->
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.page-content -->
+				</div><!-- /.main-content -->
+			</form>
+
+
+			 <script src="__PUBLIC__/datetimepicker/jquery.js"></script>
+    <script src="__PUBLIC__/datetimepicker/build/jquery.datetimepicker.full.js"></script>
+    <script>
+        $.datetimepicker.setLocale('ch');
+        $('#datetimepicker').datetimepicker();
+        $('#datetimepicker').datetimepicker({lang:'ch'});
+        $('#datetimepicker1').datetimepicker();
+        $('#datetimepicker1').datetimepicker({lang:'ch'});
+        $('#datetimepicker2').datetimepicker();
+        $('#datetimepicker2').datetimepicker({lang:'ch'});
+    </script>
+    <script>
+    KindEditor.ready(function(K) {
+      var editor1 = K.create('textarea[name="overview"]', {
+        cssPath : '__PUBLIC__/Home/plugins/code/prettify.css',
+        uploadJson : '__PUBLIC__/Home/upload_json.php',
+        fileManagerJson : '__PUBLIC__/Home/file_manager_json.php',
+        allowFileManager : true,
+        afterCreate : function() {
+          var self = this;
+          K.ctrl(document, 13, function() {
+            self.sync();
+            K('form[name=example]')[0].submit();
+          });
+          K.ctrl(self.edit.doc, 13, function() {
+            self.sync();
+            K('form[name=example]')[0].submit();
+          });
+        }
+      });
+
+      var editor2 = K.create('textarea[name="lecintroduce"]', {
+        cssPath : '__PUBLIC__/Home/plugins/code/prettify.css',
+        uploadJson : '__PUBLIC__/Home/upload_json.php',
+        fileManagerJson : '__PUBLIC__/Home/file_manager_json.php',
+        allowFileManager : true,
+        afterCreate : function() {
+          var self = this;
+          K.ctrl(document, 13, function() {
+            self.sync();
+            K('form[name=example]')[0].submit();
+          });
+          K.ctrl(self.edit.doc, 13, function() {
+            self.sync();
+            K('form[name=example]')[0].submit();
+          });
+        }
+      });
+
+      var editor2 = K.create('textarea[name="discount"]', {
+        cssPath : '__PUBLIC__/Home/plugins/code/prettify.css',
+        uploadJson : '__PUBLIC__/Home/upload_json.php',
+        fileManagerJson : '__PUBLIC__/Home/file_manager_json.php',
+        allowFileManager : true,
+        afterCreate : function() {
+          var self = this;
+          K.ctrl(document, 13, function() {
+            self.sync();
+            K('form[name=example]')[0].submit();
+          });
+          K.ctrl(self.edit.doc, 13, function() {
+            self.sync();
+            K('form[name=example]')[0].submit();
+          });
+        }
+      });
+
+      var editor2 = K.create('textarea[name="outline"]', {
+        cssPath : '__PUBLIC__/Home/plugins/code/prettify.css',
+        uploadJson : '__PUBLIC__/Home/upload_json.php',
+        fileManagerJson : '__PUBLIC__/Home/file_manager_json.php',
+        allowFileManager : true,
+        afterCreate : function() {
+          var self = this;
+          K.ctrl(document, 13, function() {
+            self.sync();
+            K('form[name=example]')[0].submit();
+          });
+          K.ctrl(self.edit.doc, 13, function() {
+            self.sync();
+            K('form[name=example]')[0].submit();
+          });
+        }
+      });
+      prettyPrint();
+    });
+</script>
+</block>

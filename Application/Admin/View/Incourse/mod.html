@@ -1,0 +1,149 @@
+<extend name="Public:layout"/>
+<block name="headlist">
+    <link rel="stylesheet" href="__PUBLIC__/Home/themes/default/default.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Home/plugins/code/prettify.css" />
+    <script charset="utf-8" src="__PUBLIC__/Home/js/kindeditor-all.js"></script>
+    <script charset="utf-8" src="__PUBLIC__/Home/js/zh-CN.js"></script>
+    <script charset="utf-8" src="__PUBLIC__/Home/plugins/code/prettify.js"></script>
+</block>
+<block name="main-content">
+
+				<div class="main-content">
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="__APP__">后台主页</a>
+							</li>
+
+							<li>
+								<a href="#">阿米巴内训管理</a>
+							</li>
+							<li class="active">修改内训案例</li>
+						</ul><!-- .breadcrumb -->
+
+					</div>
+
+					<div class="page-content">
+						<div class="page-header">
+							<h1>
+								阿米巴内训管理
+								<small>
+									<i class="icon-double-angle-right"></i>
+									修改内训案例
+								</small>
+							</h1>
+						</div><!-- /.page-header -->
+
+						<div class="row">
+							<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+
+								<form class="form-horizontal" role="form" method="post" action="__ACTION__" enctype="multipart/form-data">
+									<div class="form-group">
+                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 内训案例标题 </label>
+													
+                                            <div class="col-sm-9">
+
+                                                <input type="text" name="title" id="form-field-1" value="{$incourse.title}" class="col-xs-10 col-sm-5" />
+                                            </div>
+                                        </div>
+
+                                        <div class="space-4"></div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 内训案例原图片 </label>
+                                                    
+                                            <div class="col-sm-9">
+
+                                                <img src="__PUBLIC__/Upload/{$incourse.icon}" width=180 height=120 alt="">
+                                            </div>
+                                        </div>
+
+                                        <div class="space-4"></div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 内训案例图片 </label>
+                                                    
+                                            <div class="col-sm-9">
+
+                                                <input type="file" name="icon" id="form-field-1"  class="col-xs-10 col-sm-5 " />
+                                            </div>
+                                        </div>
+
+                                        <div class="space-4"></div>
+
+                                        <div class="form-group">
+                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 内训案例摘要 </label>
+                                                    
+                                            <div class="col-sm-9">
+
+                                                <input type="text" name="abstract" id="form-field-1" value="{$incourse.abstract}" class="col-xs-10 col-sm-5" />
+                                            </div>
+                                        </div>
+
+                                        <div class="space-4"></div>
+
+
+                                         
+                                         <div class="form-group">
+                                            <label class="col-sm-3 control-label no-padding-right" for="form-field-11">内训案例内容</label>
+
+                                            <div class="col-sm-9">
+                                                 <textarea name="content" style="width:80%;height:200px;visibility:hidden;"><?php echo htmlspecialchars($htmlData); ?>{$incourse.content}</textarea>
+                                            </div>
+                                        </div>
+                                        
+                                         <div class="space-4"></div>
+                                        <input type="hidden" name="id" value="{$incourse.id}">
+                                         <div class="space-4"></div>
+									<div class="space-4"></div>
+
+									
+									<div class="clearfix form-actions">
+										<div class="col-md-offset-3 col-md-9">
+											<input type="submit" class="btn btn-info"  name="sub" value="确认修改"/>
+												
+										</div>
+									</div>
+
+									<div class="hr hr-24"></div>
+
+										
+								</form>
+								<!-- PAGE CONTENT ENDS -->
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.page-content -->
+				</div><!-- /.main-content -->
+			</form>
+
+    <script>
+    KindEditor.ready(function(K) {
+      var editor1 = K.create('textarea[name="content"]', {
+        cssPath : '__PUBLIC__/Home/plugins/code/prettify.css',
+        uploadJson : '__PUBLIC__/Home/upload_json.php',
+        fileManagerJson : '__PUBLIC__/Home/file_manager_json.php',
+        allowFileManager : true,
+        afterCreate : function() {
+          var self = this;
+          K.ctrl(document, 13, function() {
+            self.sync();
+            K('form[name=example]')[0].submit();
+          });
+          K.ctrl(self.edit.doc, 13, function() {
+            self.sync();
+            K('form[name=example]')[0].submit();
+          });
+        }
+      });
+
+     
+      prettyPrint();
+    });
+</script>
+</block>

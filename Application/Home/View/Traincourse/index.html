@@ -1,0 +1,218 @@
+<extend name="Index/index" />
+<block name="headlist">
+    <style>
+        .course {
+            width: 100%;
+            _margin-bottom: 40px;
+            margin-top: 140px;
+            _height: 930px;
+            _background: rgb(230, 230, 230);
+        }
+        
+        .course-safe {
+            width: 1000px;
+            margin: 0 auto;
+            _height: 800px;
+            background: #fff;
+            margin-top: 40px;
+            box-shadow: 0px 0px 15px #888888;
+        }
+        
+        .amibaclass {
+            width: 94%;
+            height: 330px;
+            margin-left: 3%;
+            _float: left;
+        }
+        
+        .amibaclasslist {
+            width: 100%;
+            _height: 250px;
+            float: left;
+            _border-bottom: 1px dashed #999;
+        }
+        
+        .amibaclasslist>div>img:hover {
+            transform: scale(1.1);
+        }
+        
+        .amibaclasslist>p {
+            float: left;
+            width: 500px;
+            font-size: 16px;
+            line-height: 28px;
+            color: #666;
+            margin-left: 20px;
+        }
+        
+        input::-webkit-input-placeholder {
+            font-size: 16px;
+            color: #777;
+            text-indent: 10px;
+        }
+        
+        textarea::-webkit-input-placeholder {
+            font-size: 16px;
+            color: #777;
+            text-indent: 10px;
+        }
+    </style>
+</block>
+<block name="main">
+    <div class="course">
+        <!-- <p>This is Course page!</p> -->
+        <div class="course-safe">
+            <!-- <ul style="width:100%;">
+                <p style="width:100%;height:34px;background:#20A0FF;font-size:16px;">
+                    <i style="display:block;width:6px;height:34px;background:#156299;float:left;"></i>
+                    <span style="width:300px;margin-left:10px;line-height:34px;color:#fff;font-weight:400;float:left;">
+                        课程简介/Course synopsis
+                      </span>
+                </p>
+            </ul> -->
+            <volist name="traincourse" id="vv">
+                <ul class="amibaclass">
+                    <h1 style="height:80px;line-height:80px;color:#333;font-size:24px;font-weight:400;">{$vv.name}</h1>
+                    <li class="amibaclasslist">
+                        <div style="width:100%;height:220px;float:left;overflow:hidden;">
+                            <img src="__PUBLIC__/Upload/2017-09-22/classbanner1.jpg" alt="" style="width:100%;height:220px;float:left;transition: all 0.6s;">
+                        </div>
+                        <!-- <p>时间：{$vv.starttime|date="Y-m-d H:i",###}</p>
+                        <p>地区：{$vv.area}</p>
+                        <p>地址：{$vv.address}</p>
+                        <p>出行：{$vv.goout}</p>
+                        <p>语言：{$vv.language}</p>
+                        <p>咨询：{$vv.consult}</p>
+                        <span class="sign-up-button" style="cursor:pointer;display:block;width:100px;height:40px;margin-left:20px;margin-top:12px;line-height:40px;text-align:center;float:left;background:#20A0FF;color:#fff;font-size:14px;font-weight:600;">
+                            课程报名
+                        </span>
+                        <span class="other-timer-button" style="cursor:pointer;display:block;width:100px;height:40px;margin-left:20px;margin-top:12px;line-height:40px;text-align:center;float:left;background:#20A0FF;color:#fff;font-size:14px;font-weight:600;">
+                            查看其他时段
+                        </span> -->
+                    </li>
+                    <li style="width:100%;float:left;">
+                        <!-- <h2 style="height:40px;line-height:40px;">课程详情：</h2> -->
+                        <span style="display:block;width:100%;_height:300px;">
+                            <div class="other-timer" style="width:100%;height:120px;font-size:12px;margin-top:20px;">
+                                <div style="width:32%;float:left;border-right:1px dashed #666;margin-top:10px;">
+                                    <p>时间：{$vv.starttime|date="Y-m-d H:i",###}</p>
+                                    <p>地区：{$vv.area}</p>
+                                    <p>地址：{$vv.address}</p>
+                                    <p>出行：{$vv.goout}</p>
+                                    <p>语言：{$vv.language}</p>
+                                    <p>咨询：{$vv.consult}</p>
+                                </div>
+                                <div style="width:32%;float:left;border-right:1px dashed #666;margin-left:10px;margin-top:10px;">
+                                    <p>时间：{$vv.starttime|date="Y-m-d H:i",###}</p>
+                                    <p>地区：{$vv.area}</p>
+                                    <p>地址：{$vv.address}</p>
+                                    <p>出行：{$vv.goout}</p>
+                                    <p>语言：{$vv.language}</p>
+                                    <p>咨询：{$vv.consult}</p>
+                                </div>
+                                <div style="width:32%;float:left;margin-left:10px;margin-top:10px;">
+                                    <p>时间：{$vv.starttime|date="Y-m-d H:i",###}</p>
+                                    <p>地区：{$vv.area}</p>
+                                    <p>地址：{$vv.address}</p>
+                                    <p>出行：{$vv.goout}</p>
+                                    <p>语言：{$vv.language}</p>
+                                    <p>咨询：{$vv.consult}</p>
+                                </div>
+                            </div>
+                            <span class="sign-up-button" style="cursor:pointer;display:block;width:100px;height:40px;margin:12px auto;line-height:40px;text-align:center;background:#20A0FF;color:#fff;font-size:14px;font-weight:600;">
+                                课程报名
+                            </span>
+                        <p style="font-size:16px;color:#444;border-bottom:1px solid #888;height:30px;line-height:30px;margin:10px 0;">课程概述&nbsp;/&nbsp;Overview</p>
+                        {$vv.overview}
+                        <p style="font-size:16px;color:#444;border-bottom:1px solid #888;height:30px;line-height:30px;margin:10px 0;">课程费用及优惠&nbsp;/&nbsp;Fee and Discount</p>
+                        {$vv.discount}
+                        <p style="font-size:16px;color:#444;border-bottom:1px solid #888;height:30px;line-height:30px;margin:10px 0;">课程纲要&nbsp;/&nbsp;Outline</p>
+                        {$vv.outline}
+                        <p style="font-size:16px;color:#444;border-bottom:1px solid #888;height:30px;line-height:30px;margin:10px 0;">讲师介绍&nbsp;/&nbsp;Lecturer</p>
+                        {$vv.lecintroduce}
+                        </span>
+                    </li>
+                </ul>
+            </volist>
+            <ul style="width:100%;">
+                <p style="width:100%;height:34px;background:#20A0FF;font-size:16px;float:left;margin-top:10px;">
+                    <!-- <i style="display:block;width:6px;height:34px;background:#156299;float:left;"></i> -->
+                    <span style="width:300px;margin-left:10px;line-height:34px;color:#fff;font-weight:400;float:left;">
+                        我要报名&nbsp;/&nbsp;Sign up
+                      </span>
+                </p>
+                <li style="width:60%;margin:0 auto;font-size:14px;font-weight:400;color:#333;padding-bottom:10px;">
+                    <label>
+                        <span style="display:block;width:80px;float:left;height:55px;line-height:55px;margin-top:20px;">姓名：</span>
+                        <input type="text" placeholder="请输入姓名" style="width:300px;height:35px;border-radius:5px;margin:10px auto;margin-top:30px;border:1px solid #475669;font-size:16px;line-height:40px;"><br/>
+                    </label>
+                    <p style="width:100%;height:40px;float:left;margin:0 auto;">
+                        <span style="display:block;width:80px;float:left;height:40px;line-height:40px;float:left;">性别：</span>
+                        <label style="display:block;width:70px;height:35px;line-height:35px;float:left;margin:0;text-align:center;"><input type="radio" name="sex" style="display:block;width:16px;height:16px;float:left;margin:10px 0;">男</label>
+                        <label style="display:block;width:70px;height:35px;line-height:35px;float:left;margin:0 40px;text-align:center;"><input type="radio" name="sex" style="display:block;width:16px;height:16px;float:left;margin:10px 0;">女</label>
+                    </p><br />
+                    <label>
+                        <span style="display:block;width:80px;float:left;height:55px;line-height:55px;">职位：</span>
+                        <input type="text" placeholder="请输入职位" style="width:300px;height:35px;border-radius:5px;margin:10px auto;border:1px solid #475669;font-size:16px;line-height:40px;"><br/>
+                    </label>
+                    <label>
+                        <span style="display:block;width:80px;float:left;height:55px;line-height:55px;">邮箱：</span>
+                        <input type="email" placeholder="请输入邮箱" style="width:300px;height:35px;border-radius:5px;margin:10px auto;border:1px solid #475669;font-size:16px;line-height:40px;"><br/>
+                    </label>
+                    <label>
+                        <span style="display:block;width:80px;float:left;height:55px;line-height:55px;">手机：</span>
+                        <input type="text" placeholder="请输入手机号" style="width:300px;height:35px;border-radius:5px;margin:10px auto;border:1px solid #475669;font-size:16px;line-height:40px;"><br/>
+                    </label>
+                    <label>
+                        <span style="display:block;width:80px;float:left;height:55px;line-height:55px;">参会城市：</span>
+                        <input type="text" placeholder="请输入参会城市" style="width:300px;height:35px;border-radius:5px;margin:10px auto;border:1px solid #475669;font-size:16px;line-height:40px;"><br/>
+                    </label>
+                    <label>
+                        <span style="display:block;width:80px;float:left;height:55px;line-height:55px;">公司全称：</span>
+                        <input type="text" placeholder="请输入公司全称" style="width:300px;height:35px;border-radius:5px;margin:10px auto;border:1px solid #475669;font-size:16px;line-height:40px;"><br/>
+                    </label>
+                    <p style="display:block;width:100%;height:40px;">
+                        <span style="display:block;width:80px;float:left;height:40px;line-height:40px;float:left;">发票内容：</span>
+                        <label style="display:block;width:80px;height:40px;line-height:40px;float:left;margin:0;text-align:center;"><input type="radio" name="111" style="display:block;width:16px;height:16px;float:left;margin:12px 0;">会务费</label>
+                        <label style="display:block;width:80px;height:40px;line-height:40px;float:left;margin:0 20px;text-align:center;"><input type="radio" name="111" style="display:block;width:16px;height:16px;float:left;margin:12px 0;">咨询费</label>
+                        <label style="display:block;width:80px;height:40px;line-height:40px;float:left;margin:0 20px;text-align:center;"><input type="radio" name="111" style="display:block;width:16px;height:16px;float:left;margin:12px 0;">服务费</label>
+                    </p>
+                    <p style="display:block;width:100%;height:40px;">
+                        <span style="display:block;width:80px;float:left;height:40px;line-height:40px;float:left;">支付方式：</span>
+                        <label style="display:block;width:80px;height:40px;line-height:40px;float:left;margin:0;text-align:center;"><input type="radio" name="222" style="display:block;width:16px;height:16px;float:left;margin:12px 0;">支付宝</label>
+                        <label style="display:block;width:80px;height:40px;line-height:40px;float:left;margin:0 20px;text-align:center;"><input type="radio" name="222" style="display:block;width:16px;height:16px;float:left;margin:12px 0;">刷卡</label>
+                        <label style="display:block;width:80px;height:40px;line-height:40px;float:left;margin:0 20px;text-align:center;"><input type="radio" name="222" style="display:block;width:16px;height:16px;float:left;margin:12px 0;">现金</label>
+                        <label style="display:block;width:100px;height:40px;line-height:40px;float:left;margin:0 20px;text-align:center;"><input type="radio" name="222" style="display:block;width:16px;height:16px;float:left;margin:12px 0;">银行转账</label>
+                    </p>
+                    <label>
+                        <span style="float:left;margin-top:16px;display:block;width:80px;">备注：</span>
+                        <input placeholder="请输入留言" style="width:300px;height:35px;border-radius:5px;margin:10px auto;border:1px solid #475669;font-size:16px;line-height:40px;"></input><br/>
+                    </label>
+                    <button style="display:block;width:100px;height:30px;background:#20A0FF;border:1px solid #bfcbd9;color:#fff;margin:10px auto;">报名</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(function() {
+            // var bodyHeight = $("body").height();
+            // console.log(bodyHeight)
+            // var changeHeight = 0;
+            // if ($(".other-timer").css("display") == "none") {
+            //     changeHeight = 790
+            // } else {
+            //     changeHeight = 750
+            // }
+            $(".sign-up-button").click(function() {
+                var bodyHeight = $("body").height();
+                $("html,body").animate({
+                    scrollTop: (bodyHeight - 590)
+                }, 500);
+            })
+            $(".other-timer-button").click(function() {
+                $(".other-timer").slideToggle();
+                // bodyHeight = $("body").height();
+            })
+        })
+    </script>
+</block>

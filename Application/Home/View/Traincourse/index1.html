@@ -1,0 +1,110 @@
+<extend name="Index/index" />
+<block name="headlist">
+    <style>
+        .course {
+            width: 100%;
+            _margin-bottom: 40px;
+            margin-top: 140px;
+            _height: 930px;
+            _background: rgb(230, 230, 230);
+        }
+        
+        .course-safe {
+            width: 1000px;
+            margin: 0 auto;
+            _height: 800px;
+            background: #fff;
+            margin-top: 40px;
+            box-shadow: 0px 0px 15px #888888;
+        }
+        
+        .amibaclass {
+            width: 94%;
+            _height: 300px;
+            margin-left: 3%;
+        }
+        
+        .amibaclasslist {
+            width: 100%;
+            height: 200px;
+            float: left;
+            border-bottom: 1px dashed #999;
+        }
+        
+        .amibaclasslist>p {
+            float: left;
+            width: 500px;
+            font-size: 16px;
+            line-height: 28px;
+            color: #666;
+            margin-left: 20px;
+        }
+        
+        input::-webkit-input-placeholder {
+            font-size: 16px;
+            color: #777;
+            text-indent: 10px;
+        }
+        
+        textarea::-webkit-input-placeholder {
+            font-size: 16px;
+            color: #777;
+            text-indent: 10px;
+        }
+    </style>
+</block>
+<block name="main">
+    <div class="course">
+        <!-- <p>This is Course page!</p> -->
+        <div class="course-safe">
+            <ul style="width:100%;">
+                <p style="width:100%;height:34px;background:#475669;font-size:18px;">
+                    <i style="display:block;width:6px;height:34px;background:#1c86d5;float:left;"></i>
+                    <span style="width:300px;margin-left:10px;line-height:34px;color:#bfcbd9;font-weight:400;float:left;">
+                        课程简介/Course synopsis
+                      </span>
+                </p>
+            </ul>
+            <volist name="traincourse" id="vv">
+                <ul class="amibaclass">
+                    <h1 style="height:80px;line-height:80px;color:#333;font-size:24px;font-weight:400;">{$vv.name}</h1>
+                    <li class="amibaclasslist">
+                        <img src="__PUBLIC__/Upload/{$vv.icon}" alt="" style="float:left;">
+                        <p>时间：{$vv.starttime|date="Y-m-d H:i",###}</p>
+                        <p>地区：{$vv.area}</p>
+                        <p>地址：{$vv.address}</p>
+                        <p>出行：{$vv.goout}</p>
+                        <p>语言：{$vv.language}</p>
+                        <p>咨询：{$vv.consult}</p>
+                    </li>
+                    <li style="width:100%;height:500px;">
+                        <h2 style="height:40px;line-height:40px;">课程详情：</h2>
+                    </li>
+                </ul>
+            </volist>
+            <ul style="width:100%;">
+                <p style="width:100%;height:34px;background:#475669;font-size:18px;">
+                    <i style="display:block;width:6px;height:34px;background:#1c86d5;float:left;"></i>
+                    <span style="width:300px;margin-left:10px;line-height:34px;color:#bfcbd9;font-weight:400;float:left;">
+                        我要报名/Sign up
+                      </span>
+                </p>
+                <li style="width:70%;margin:0 auto;font-size:16px;font-weight:400;color:#333;padding-bottom:10px;">
+                    <label>
+                        <span>姓名：</span>
+                        <input type="text" placeholder="请输入姓名" style="width:300px;height:40px;border-radius:5px;margin:10px auto;border:1px solid #475669;font-size:16px;line-height:40px;"><br/>
+                      </label>
+                    <label>
+                        <span>手机：</span>
+                        <input type="text" placeholder="请输入手机号" style="width:300px;height:40px;border-radius:5px;margin:10px auto;border:1px solid #475669;font-size:16px;line-height:40px;"><br/>
+                      </label>
+                    <label>
+                        <span style="float:left;margin-top:10px;">备注：</span>
+                        <textarea name="" id="" cols="30" rows="10" placeholder="请输入留言" style="width:600px;height:230px;border-radius:5px;margin:10px 0 0 5px;border:1px solid #475669;font-size:16px;line-height:24px;"></textarea><br/>
+                      </label>
+                    <button style="display:block;width:100px;height:30px;background:#475669;border:1px solid #bfcbd9;color:#bfcbd9;margin:10px auto;">报名</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</block>

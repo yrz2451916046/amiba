@@ -1,0 +1,104 @@
+<extend name="Index/index" />
+<block name="headlist">
+<style>
+    .training {
+        width: 100%;
+        _height: 1000px;
+        margin-top: 140px;
+    }
+    
+    .training-safe {
+        width: 1000px;
+        _height: 1000px;
+        background: #fff;
+        margin: 0 auto;
+    }
+    
+    .training-process {
+        width: 100%;
+        height: 500px;
+        _background: lightblue;
+    }
+    
+    .training-case {
+        width: 100%;
+        _height: 500px;
+    }
+</style>
+</block>
+<block name="main">
+    <div class="training">
+        <div class="training-safe">
+            <!-- 内训流程 -->
+            <p style="width:100%;height:34px;background:#475669;font-size:18px;">
+                <i style="display:block;width:6px;height:34px;background:#1c86d5;float:left;"></i>
+                <span style="width:300px;margin-left:10px;line-height:34px;color:#bfcbd9;font-weight:400;float:left;">
+                      内训流程/Training process
+                    </span>
+            </p>
+            <div class="training-process">
+
+            </div>
+            <!-- 内训流程结束 -->
+            <p style="width:100%;height:34px;background:#475669;font-size:18px;">
+                <i style="display:block;width:6px;height:34px;background:#1c86d5;float:left;"></i>
+                <span style="width:300px;margin-left:10px;line-height:34px;color:#bfcbd9;font-weight:400;float:left;">
+                      案例见证/Case witness
+                    </span>
+            </p>
+            <div class="training-case">
+                <volist name="incourse" id="vo">
+                <div style="width:100%;height:230px;border-bottom: 1px solid #666;">
+                    <img src="__PUBLIC__/Upload/{$vo.icon}" alt="" style="width:300px;height:180px;margin:25px;float:left;">
+                    <ul style="width:625px;height:180px;float:left;margin:25px 0;">
+                        <a href="#" style="display:block;height:28px;width:100%;font-size:18px;line-height:28px;font-weight:400;">{$vo.title}</a>
+                        <li style="width:100%;height:28px;line-height:28px;font-size:14px;">发布者：Rexyu &nbsp;|&nbsp;时间：{$vo.addtime|date="Y-m-d",###} &nbsp;|&nbsp;浏览次数：818</li>
+                        <li style="width:100%;height:56px;line-height:28px;font-size:14px;text-indent:24px;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;margin-top:12px;">{$vo.abstract}</li>
+                        <a href="#" style="display:block;width:100px;height:40px;border:2px solid lightblue;margin-top:12px;line-height:40px;text-align:center;font-size:18px;color:lightblue;">
+                          MORE
+                        </a>
+                    </ul>
+                </div>
+                </volist>
+                <!-- <div style="width:100%;height:230px;border-bottom: 1px solid #666;">
+                    <img src="../../assets/image/amibaclass.jpg" alt="" style="width:300px;height:180px;margin:25px;float:left;">
+                    <ul style="width:625px;height:180px;float:left;margin:25px 0;">
+                        <a href="#" style="display:block;height:28px;width:100%;font-size:18px;line-height:28px;font-weight:400;">案例2</a>
+                        <li style="width:100%;height:28px;line-height:28px;font-size:14px;">发布者：Rexyu &nbsp;|&nbsp;时间：2017-09-18 &nbsp;|&nbsp;浏览次数：818</li>
+                        <li style="width:100%;height:56px;line-height:28px;font-size:14px;text-indent:24px;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;margin-top:12px;">案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介</li>
+                        <a href="#" style="display:block;width:100px;height:40px;border:2px solid lightblue;margin-top:12px;line-height:40px;text-align:center;font-size:18px;color:lightblue;">
+                          MORE
+                        </a>
+                    </ul>
+                </div>
+                <div style="width:100%;height:230px;border-bottom: 1px solid #666;">
+                    <img src="../../assets/image/amibaclass.jpg" alt="" style="width:300px;height:180px;margin:25px;float:left;">
+                    <ul style="width:625px;height:180px;float:left;margin:25px 0;">
+                        <a href="#" style="display:block;height:28px;width:100%;font-size:18px;line-height:28px;font-weight:400;">案例3</a>
+                        <li style="width:100%;height:28px;line-height:28px;font-size:14px;">发布者：Rexyu &nbsp;|&nbsp;时间：2017-09-18 &nbsp;|&nbsp;浏览次数：818</li>
+                        <li style="width:100%;height:56px;line-height:28px;font-size:14px;text-indent:24px;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;margin-top:12px;">案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介</li>
+                        <a href="#" style="display:block;width:100px;height:40px;border:2px solid lightblue;margin-top:12px;line-height:40px;text-align:center;font-size:18px;color:lightblue;">
+                          MORE
+                        </a>
+                    </ul>
+                </div>
+                <div style="width:100%;height:230px;">
+                    <img src="../../assets/image/amibaclass.jpg" alt="" style="width:300px;height:180px;margin:25px;float:left;">
+                    <ul style="width:625px;height:180px;float:left;margin:25px 0;">
+                        <a href="#" style="display:block;height:28px;width:100%;font-size:18px;line-height:28px;font-weight:400;">案例4</a>
+                        <li style="width:100%;height:28px;line-height:28px;font-size:14px;">发布者：Rexyu &nbsp;|&nbsp;时间：2017-09-18 &nbsp;|&nbsp;浏览次数：818</li>
+                        <li style="width:100%;height:56px;line-height:28px;font-size:14px;text-indent:24px;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;margin-top:12px;">案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介案例简介</li>
+                        <a href="#" style="display:block;width:100px;height:40px;border:2px solid lightblue;margin-top:12px;line-height:40px;text-align:center;font-size:18px;color:lightblue;">
+                          MORE
+                        </a>
+                    </ul>
+                </div> -->
+
+
+
+
+            </div>
+        </div>
+    </div>
+    
+</block>

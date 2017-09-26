@@ -1,0 +1,53 @@
+<extend name="Index/index" />
+<block name="headlist">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .xiangqing {
+        width: 100%;
+        background: rgb(230, 230, 230);
+        margin-top: 140px;
+    }
+    
+    .xiangqing-safe {
+        width: 1000px;
+        margin: 0 auto;
+        background: #fff;
+    }
+    
+    .text {
+        width: 90%;
+        margin: 3%;
+        margin: 0 auto;
+    }
+</style>
+</block>
+<block name="main">
+    <div class="xiangqing">
+        <div class="xiangqing-safe">
+            <div class="text">
+                <h1 style="height:80px;line-height:80px;font-size:16px;text-align:center;font-weight:blod;">{$data.title}</h1>
+                <div style="width:100%;height:40px;border-top:1px dashed #666;border-bottom:1px dashed #666;font-size:14px;">
+                    <p style="float:left;color:#333;width:18%;height:40px;line-height:40px;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+                        <b style="color:#20A0FF;">发布者：</b>{$data.username}
+                    </p>
+                    <p style="float:left;color:#333;width:40%;margin-left:12%;height:40px;line-height:40px;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+                        <b style="color:#20A0FF;">摘要：</b>{$data.abstract}
+                    </p>
+                    <p style="width:18%;height:40px;line-height:40px;text-align:center;float:right;color:#333;">
+                        <b style="color:#20A0FF;">发布时间：</b>{$data.addtime|date="Y-m-d",###}
+                    </p>
+                </div>
+                <span style="display:block;width:100%;font-size:14px;line-height:24px;color:#666;margin-top:20px;text-align:justify;">
+                        {$data.content}
+                </span>
+                <!-- <p style="margin-top:20px;font-size:14px;color:#666;height:40px;">
+                    <b style="color:#20A0FF;">来源：</b>澎湃新闻网
+                </p> -->
+            </div>
+        </div>
+    </div>
+</block>
