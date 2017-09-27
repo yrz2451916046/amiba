@@ -7,6 +7,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="/Public/Home/js/jquery-1.8.3.min.js"></script>
+    <script src="/Public/Home/js/flux.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(function() {
+            if (!flux.browser.supportsTransitions)
+                alert("Flux Slider requires a browser that supports CSS3 transitions");
+            window.f = new flux.slider('#slider', {
+                autoplay: true,
+                pagination: false
+            });
+            // Setup a listener for user requested transitions
+            $('div#transitions').bind('click', function(event) {
+                event.preventDefault();
+                // If this is a 3D transform and the browser doesn't support 3D then inform the user
+                if ($(event.target).closest('ul').is('ul#trans3d') && !flux.browser.supports3d) {
+                    alert("The '" + event.target.innerHTML + "' transition requires a browser that supports 3D transforms");
+                    return;
+                }
+                window.f.next(event.target.href.split('#')[1]);
+            });
+        });
+        // $(function() {
+        //     window.myFlux = $('#slider').flux();
+        // });
+    </script>
     
     <style>
         * {
@@ -43,7 +67,7 @@
             position: fixed;
             left: 0;
             top: 0;
-            z-index: 5;
+            z-index: 105;
         }
         
         .nav>ul {
@@ -408,6 +432,22 @@
         .getcolor {
             color: #20A0FF!important;
         }
+        
+        .homecourse-safe img:hover {
+            transform: scale(1.1)
+        }
+        
+        .homeintroduce-top img:hover {
+            transform: scale(1.1)
+        }
+        
+        .homeintroduce-bott img:hover {
+            transform: scale(1.1)
+        }
+        
+        .homeresearch-top img:hover {
+            transform: scale(1.1)
+        }
     </style>
 </head>
 
@@ -484,7 +524,9 @@
                         <!-- <a class="font-changecolor" href="#" style="color:#8D0840;margin-left:-6px;display:block;margin-bottom:10px;white-space:nowrap;font-size:14px;">【面授】阿米巴精英课程</a> -->
                     </div>
                     <a href="<?php echo U('Traincourse/index',array('id'=>2));?>" style="display:block;width:750px;height:350px;background:#fff;float:left;">
-                        <img src="/Public/Upload/<?php echo ($traincourse["icon"]); ?>" alt="" style="display:block;width:100%;height:60%;">
+                        <div style="width:100%;height:60%;overflow:hidden;">
+                            <img src="/Public/Upload/<?php echo ($traincourse["icon"]); ?>" alt="" style="display:block;width:100%;height:100%;transition: all 0.6s;">
+                        </div>
                         <p style="height:40px;padding-left:20px;font-size:22px;line-height:40px;color:#333;">课程简介</p>
                         <span style="display:block;width:94%;height:80px;font-size:14px;line-height:24px;text-indent:28px;padding-left:20px;padding-right:20px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;">
                             <?php echo ($traincourse["overview"]); ?>
@@ -523,7 +565,9 @@
                     <div class="homeintroduce-center">
                         <div class="homeintroduce-top">
                             <?php if(is_array($incoursecentert)): $i = 0; $__LIST__ = $incoursecentert;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><a href="<?php echo U('Incourse/detail',array('id'=>3,'inid'=>$vo['id']));?>" style="display:block;width:100%;height:100%;overflow:hidden;position:relative;">
-                                    <img src="/Public/Upload/<?php echo ($vo["icon"]); ?>" alt="" style="width:450px;height:125px;float:left;">
+                                    <div style="width:450px;height:125px;float:left;overflow:hidden;">
+                                        <img src="/Public/Upload/<?php echo ($vo["icon"]); ?>" alt="" style="width:450px;height:125px;float:left;transition: all 0.6s;">
+                                    </div>
                                     <p class="positionflash" style="width:100%;height:100%;background:rgba(255,255,255,0.8);position:absolute;top:125px;">
                                         <span style="display:block;width:400px;height:40px;margin-left:25px;line-height:40px;font-size:16px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?php echo ($vo["title"]); ?></span>
                     </p>
@@ -532,7 +576,9 @@
                 <div class="homeintroduce-bott">
                     <?php if(is_array($incoursecenterd1)): $i = 0; $__LIST__ = $incoursecenterd1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vd1): $mod = ($i % 2 );++$i;?><div class="homeintroduce-bottl">
                             <a href="<?php echo U('Incourse/detail',array('id'=>3,'inid'=>$vd1['id']));?>" style="display:block;width:100%;height:100%;overflow:hidden;position:relative;">
-                                <img src="/Public/Upload/<?php echo ($vd1["icon"]); ?>" alt="" style="width:215px;height:125px;float:left;">
+                                <div style="width:215px;height:125px;float:left;overflow:hidden;">
+                                    <img src="/Public/Upload/<?php echo ($vd1["icon"]); ?>" alt="" style="width:215px;height:125px;float:left;transition: all 0.6s;">
+                                </div>
                                 <p class="positionflash" style="width:100%;height:100%;background:rgba(255,255,255,0.8);position:absolute;top:125px;">
                                     <span style="display:block;width:187px;height:40px;margin-left:14px;line-height:40px;font-size:14px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?php echo ($vd1["title"]); ?></span>
                                 </p>
@@ -540,7 +586,10 @@
                         </div><?php endforeach; endif; else: echo "" ;endif; ?>
                     <?php if(is_array($incoursecenterd2)): $i = 0; $__LIST__ = $incoursecenterd2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vd2): $mod = ($i % 2 );++$i;?><div class="homeintroduce-bottr">
                             <a href="<?php echo U('Incourse/detail',array('id'=>3,'inid'=>$vd2['id']));?>" style="display:block;width:100%;height:100%;overflow:hidden;position:relative;">
-                                <img src="/Public/Upload/<?php echo ($vd2["icon"]); ?>" alt="" style="width:215px;height:125px;float:left;">
+                                <div style="width:215px;height:125px;float:left;overflow:hidden;">
+                                    <img src="/Public/Upload/<?php echo ($vd2["icon"]); ?>" alt="" style="width:215px;height:125px;float:left;transition: all 0.6s;">
+                                </div>
+                                <!-- <img src="/Public/Upload/<?php echo ($vd2["icon"]); ?>" alt="" style="width:215px;height:125px;float:left;"> -->
                                 <p class="positionflash" style="width:100%;height:100%;background:rgba(255,255,255,0.8);position:absolute;top:125px;">
                                     <span style="display:block;width:187px;height:40px;margin-left:14px;line-height:40px;font-size:14px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?php echo ($vd2["title"]); ?></span>
                                 </p>
@@ -569,7 +618,10 @@
                         <div class="homeintroduce-center">
                             <div class="homeresearch-top">
                                <?php if(is_array($ambnewscentert)): $i = 0; $__LIST__ = $ambnewscentert;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vt): $mod = ($i % 2 );++$i;?><a href="<?php echo U('Research/detail',array('id'=>4,'aid'=>$vt['id']));?>" style="display:block;width:100%;height:100%;overflow:hidden;position:relative;">
-                                    <img src="/Public/Upload/<?php echo ($vt["icon"]); ?>" alt="" style="width:450px;height:125px;float:left;">
+                                    <div style="width:450px;height:125px;float:left;overflow:hidden;">
+                                        <img src="/Public/Upload/<?php echo ($vt["icon"]); ?>" alt="" style="width:450px;height:125px;float:left;transition: all 0.6s;">
+                                    </div>
+                                    <!-- <img src="/Public/Upload/<?php echo ($vt["icon"]); ?>" alt="" style="width:450px;height:125px;float:left;"> -->
                                     <p class="positionflash" style="width:100%;height:100%;background:rgba(255,255,255,0.8);position:absolute;top:125px;">
                                         <span style="display:block;width:400px;height:40px;margin-left:25px;line-height:40px;font-size:16px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?php echo ($vt["title"]); ?></span>
                 </p>
@@ -578,7 +630,10 @@
             <div class="homeintroduce-bott">
                 <?php if(is_array($ambnewscenterd1)): $i = 0; $__LIST__ = $ambnewscenterd1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="homeresearch-bottl">
                         <a href="<?php echo U('Research/detail',array('id'=>4,'aid'=>$vo['id']));?>" style="display:block;width:100%;height:100%;overflow:hidden;position:relative;">
-                            <img src="/Public/Upload/<?php echo ($vo["icon"]); ?>" alt="" style="width:215px;height:125px;float:left;">
+                            <div style="width:215px;height:125px;float:left;overflow:hidden;">
+                                <img src="/Public/Upload/<?php echo ($vo["icon"]); ?>" alt="" style="width:215px;height:125px;float:left;transition: all 0.6s;">
+                            </div>
+                            <!-- <img src="/Public/Upload/<?php echo ($vo["icon"]); ?>" alt="" style="width:215px;height:125px;float:left;"> -->
                             <p class="positionflash" style="width:100%;height:100%;background:rgba(255,255,255,0.8);position:absolute;top:125px;">
                                 <span style="display:block;width:187px;height:40px;margin-left:14px;line-height:40px;font-size:14px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?php echo ($vo["title"]); ?></span>
                             </p>
@@ -586,7 +641,10 @@
                     </div><?php endforeach; endif; else: echo "" ;endif; ?>
                 <?php if(is_array($ambnewscenterd2)): $i = 0; $__LIST__ = $ambnewscenterd2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="homeresearch-bottr">
                         <a href="<?php echo U('Research/detail',array('id'=>4,'aid'=>$vo['id']));?>" style="display:block;width:100%;height:100%;overflow:hidden;position:relative;">
-                            <img src="/Public/Upload/<?php echo ($vo["icon"]); ?>" alt="" style="width:215px;height:125px;float:left;">
+                            <div style="width:215px;height:125px;float:left;overflow:hidden;">
+                                <img src="/Public/Upload/<?php echo ($vo["icon"]); ?>" alt="" style="width:215px;height:125px;float:left;transition: all 0.6s;">
+                            </div>
+                            <!-- <img src="/Public/Upload/<?php echo ($vo["icon"]); ?>" alt="" style="width:215px;height:125px;float:left;"> -->
                             <p class="positionflash" style="width:100%;height:100%;background:rgba(255,255,255,0.8);position:absolute;top:125px;">
                                 <span style="display:block;width:187px;height:40px;margin-left:14px;line-height:40px;font-size:14px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?php echo ($vo["title"]); ?></span>
                             </p>
@@ -658,7 +716,7 @@
                 <li>
                     <a class="feet-title" href="<?php echo U('Research/index',array('id'=>4));?>">阿米巴研究</a>
                     <a class="feet-content" href="<?php echo U('Research/index',array('id'=>4));?>" style="margin-top:20px;">新闻咨询</a>
-                    <a class="feet-content" href="<?php echo U('Research/index',array('id'=>4));?>">阿米巴研究文章</a>
+                    <!-- <a class="feet-content" href="<?php echo U('Research/index',array('id'=>4));?>">阿米巴研究文章</a> -->
                 </li>
                 <li style="border:0;">
                     <a class="feet-title" href="<?php echo U('Lists/aboutus');?>">关于我们</a>

@@ -7,6 +7,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="/Public/Home/js/jquery-1.8.3.min.js"></script>
+    <script src="/Public/Home/js/flux.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(function() {
+            if (!flux.browser.supportsTransitions)
+                alert("Flux Slider requires a browser that supports CSS3 transitions");
+            window.f = new flux.slider('#slider', {
+                autoplay: true,
+                pagination: false
+            });
+            // Setup a listener for user requested transitions
+            $('div#transitions').bind('click', function(event) {
+                event.preventDefault();
+                // If this is a 3D transform and the browser doesn't support 3D then inform the user
+                if ($(event.target).closest('ul').is('ul#trans3d') && !flux.browser.supports3d) {
+                    alert("The '" + event.target.innerHTML + "' transition requires a browser that supports 3D transforms");
+                    return;
+                }
+                window.f.next(event.target.href.split('#')[1]);
+            });
+        });
+        // $(function() {
+        //     window.myFlux = $('#slider').flux();
+        // });
+    </script>
     
     <style>
         .training {
@@ -18,9 +42,9 @@
         .training-safe {
             width: 1000px;
             _height: 1000px;
-            background: #fff;
+            _background: #fff;
             margin: 0 auto;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+            _box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
         }
         
         .training-process {
@@ -32,6 +56,9 @@
         .training-case {
             width: 100%;
             _height: 500px;
+            float: left;
+            background: #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
         }
         
         .training-case>div:hover {
@@ -90,7 +117,7 @@
             position: fixed;
             left: 0;
             top: 0;
-            z-index: 5;
+            z-index: 105;
         }
         
         .nav>ul {
@@ -455,6 +482,22 @@
         .getcolor {
             color: #20A0FF!important;
         }
+        
+        .homecourse-safe img:hover {
+            transform: scale(1.1)
+        }
+        
+        .homeintroduce-top img:hover {
+            transform: scale(1.1)
+        }
+        
+        .homeintroduce-bott img:hover {
+            transform: scale(1.1)
+        }
+        
+        .homeresearch-top img:hover {
+            transform: scale(1.1)
+        }
     </style>
 </head>
 
@@ -488,79 +531,15 @@
     
     <div class="training">
         <div class="training-safe">
-            <!-- 内训流程 -->
-            <p style="width:100%;height:34px;background:#8A2BE2	;font-size:16px;">
-                <!-- <i style="display:block;width:6px;height:34px;background:#4B0082;float:left;"></i> -->
-                <span style="width:300px;margin-left:10px;line-height:34px;color:#fff;font-weight:400;float:left;">
-                    内训流程&nbsp;/&nbsp;Training process
-                </span>
-            </p>
-            <div style="width:100%;height:145px;margin-top:30px;">
-                <div style="width:360px;height:140px;float:left;border:2px solid #8A2BE2;border-radius:20px;margin-left:70px;">
-                    <h1>一、企业总体培训需求了解</h1>
-                    <p class="fenbu">1、企业背景了解；</p>
-                    <p class="fenbu">2、受训学院情况了解，主要存在的问题；</p>
-                    <p class="fenbu">3、企业组织培训的目的及期望；</p>
-                    <p class="fenbu">4、管理层的目标，HR部门的建议；</p>
-                </div>
-                <div style="width:140px;height:140px;float:left;">
-                    <img src="/Public/Upload/2017-09-22/lct_right1.png" alt="" style="display:block;margin:35px auto;">
-                </div>
-                <div style="width:360px;height:140px;float:left;border:2px solid #8A2BE2;border-radius:20px;">
-                    <h1>二、培训需求分析</h1>
-                    <p class="fenbu">1、了解岗位需求及设置问卷；</p>
-                    <p class="fenbu">2、与业务部门及相关人员沟通访谈；</p>
-                    <p class="fenbu">3、分析汇总需求，归纳成需求报告；</p>
-                </div>
-            </div>
-            <div style="width:100%;height:70px;margin:5px 0;">
-                <img src="/Public/Upload/2017-09-22/lct_bottom.png" alt="" style="margin-left:715px;">
-            </div>
-            <div style="width:100%;height:145px;">
-                <div style="width:360px;height:140px;float:left;border:2px solid #8A2BE2;border-radius:20px;margin-left:70px;">
-                    <h1>四、确定方案及制定培训计划</h1>
-                    <p class="fenbu">1、签订培训协议（先企业，后讲师）；</p>
-                    <p class="fenbu">2、编制培训详细计划安排；</p>
-                    <p class="fenbu">3、落实培训细节，跟进各个环节；</p>
-                </div>
-                <div style="width:140px;height:140px;float:left;">
-                    <img src="/Public/Upload/2017-09-22/lct_left1.png" alt="" style="display:block;margin:35px auto;">
-                </div>
-                <div style="width:360px;height:140px;float:left;border:2px solid #8A2BE2;border-radius:20px;">
-                    <h1>三、培训课程设计及讲师匹配</h1>
-                    <p class="fenbu">1、根据需求分析，判断培训方向及应达到效果；</p>
-                    <p class="fenbu">2、确定主题、内容、讲师、授课形式；</p>
-                    <p class="fenbu">3、提交正式的培训报价及培训建议书；</p>
-                </div>
-            </div>
-            <div style="width:100%;height:70px;margin:5px 0;">
-                <img src="/Public/Upload/2017-09-22/lct_bottom.png" alt="" style="margin-left:215px;">
-            </div>
-            <div style="width:100%;height:145px;margin-bottom:30px;">
-                <div style="width:360px;height:140px;float:left;border:2px solid #8A2BE2;border-radius:20px;margin-left:70px;">
-                    <h1>五、培训组织与实施</h1>
-                    <p class="fenbu">1、顾问与讲师到达客户安排地点；</p>
-                    <p class="fenbu">2、与企业HR及需求部门共同监督培训过程；</p>
-                    <p class="fenbu">3、及时调整授课过程出现的应急问题及情况；</p>
-                </div>
-                <div style="width:140px;height:140px;float:left;">
-                    <img src="/Public/Upload/2017-09-22/lct_right1.png" alt="" style="display:block;margin:35px auto;">
-                </div>
-                <div style="width:360px;height:140px;float:left;border:2px solid #8A2BE2;border-radius:20px;">
-                    <h1>六、培训评估及跟进</h1>
-                    <p class="fenbu">1、课程评估顿、问卷汇总反馈提供小节报告；</p>
-                    <p class="fenbu">2、收到讲师培训后建议；</p>
-                    <p class="fenbu">3、及时反馈给企业评估报告及部分训后指导；</p>
-                </div>
-            </div>
-            <!-- <img src="/Public/Upload/2017-09-22/lct_2.png" alt="" style="width:980px;"> -->
+            <!-- 内训流程Training process -->
+            <span style="margin:3px 0;display:block;width:100%;height:50px;float:left;line-height:50px;color:#8A2BE2;font-size:24px;background:#fff;border-top:2px solid #8A2BE2;">
+                <img src="/Public/Upload/2017-09-22/edit.png" style="width:26px;height:26px;margin:12px;float:left;">内训流程&nbsp;/&nbsp;Training process
+            </span>
+            <img src="" alt="" style="display:block;width:100%;height:400px;background:#fff;float:left;box-shadow: 0 5px 10px rgba(0, 0, 0, .1);">
             <!-- 内训流程结束 -->
-            <p style="width:100%;height:34px;background:#8A2BE2	;font-size:16px;">
-                <!-- <i style="display:block;width:6px;height:34px;background:#4B0082;float:left;"></i> -->
-                <span style="width:300px;margin-left:10px;line-height:34px;color:#fff;font-weight:400;float:left;">
-                    案例见证&nbsp;/&nbsp;Case witness
-                </span>
-            </p>
+            <span style="margin:3px 0;margin-top:40px;display:block;width:100%;height:50px;float:left;line-height:50px;color:#8A2BE2;font-size:24px;background:#fff;border-top:2px solid #8A2BE2;">
+                <img src="/Public/Upload/2017-09-22/cascades.png" style="width:26px;height:26px;margin:12px;float:left;">案例见证&nbsp;/&nbsp;Training process
+            </span>
             <div class="training-case">
                 <?php if(is_array($incourse)): $i = 0; $__LIST__ = $incourse;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div style="width:100%;height:230px;border-bottom: 1px solid #666;">
                         <a href="<?php echo U('Incourse/detail',array('id'=>$id,'inid'=>$vo['id']));?>" style="display:block;width:300px;height:180px;margin:25px;float:left;overflow:hidden;">
@@ -631,7 +610,7 @@
                 <li>
                     <a class="feet-title" href="<?php echo U('Research/index',array('id'=>4));?>">阿米巴研究</a>
                     <a class="feet-content" href="<?php echo U('Research/index',array('id'=>4));?>" style="margin-top:20px;">新闻咨询</a>
-                    <a class="feet-content" href="<?php echo U('Research/index',array('id'=>4));?>">阿米巴研究文章</a>
+                    <!-- <a class="feet-content" href="<?php echo U('Research/index',array('id'=>4));?>">阿米巴研究文章</a> -->
                 </li>
                 <li style="border:0;">
                     <a class="feet-title" href="<?php echo U('Lists/aboutus');?>">关于我们</a>

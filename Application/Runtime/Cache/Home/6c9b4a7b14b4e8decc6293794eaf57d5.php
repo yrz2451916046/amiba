@@ -7,7 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="/Public/Home/js/jquery-1.8.3.min.js"></script>
+    <script src="/Public/Home/js/flux.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(function() {
+            if (!flux.browser.supportsTransitions)
+                alert("Flux Slider requires a browser that supports CSS3 transitions");
+            window.f = new flux.slider('#slider', {
+                autoplay: true,
+                pagination: false
+            });
+            // Setup a listener for user requested transitions
+            $('div#transitions').bind('click', function(event) {
+                event.preventDefault();
+                // If this is a 3D transform and the browser doesn't support 3D then inform the user
+                if ($(event.target).closest('ul').is('ul#trans3d') && !flux.browser.supports3d) {
+                    alert("The '" + event.target.innerHTML + "' transition requires a browser that supports 3D transforms");
+                    return;
+                }
+                window.f.next(event.target.href.split('#')[1]);
+            });
+        });
+        // $(function() {
+        //     window.myFlux = $('#slider').flux();
+        // });
+    </script>
     
+
     <style>
         .introduce {
             width: 100%;
@@ -21,7 +46,7 @@
             margin: 0 auto;
             height: 400px;
             _background: #fff;
-            background: linear-gradient(to bottom right, #48D1CC, #00FFFF);
+            _background: linear-gradient(to bottom right, #ECDE1D, #F8F549);
             overflow: hidden;
             box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
             position: relative;
@@ -77,7 +102,7 @@
             position: fixed;
             left: 0;
             top: 0;
-            z-index: 5;
+            z-index: 105;
         }
         
         .nav>ul {
@@ -442,6 +467,22 @@
         .getcolor {
             color: #20A0FF!important;
         }
+        
+        .homecourse-safe img:hover {
+            transform: scale(1.1)
+        }
+        
+        .homeintroduce-top img:hover {
+            transform: scale(1.1)
+        }
+        
+        .homeintroduce-bott img:hover {
+            transform: scale(1.1)
+        }
+        
+        .homeresearch-top img:hover {
+            transform: scale(1.1)
+        }
     </style>
 </head>
 
@@ -475,12 +516,19 @@
     
     <div class="introduce">
         <!-- <p>This is Introduce page!</p> -->
-        <div class="introduce-safe">
-            <ul class="introduce-show">
-                <li>
+        <div class="introduce-safe" id="slidercontainer">
+            <ul class="introduce-show" id="slider">
+                <img src="/Public/Upload/2017-09-22/daosheng1.png" alt="" style="width:1000px;height:400px;">
+                <img src="/Public/Upload/2017-09-22/amibajingying.png" alt="" style="width:1000px;height:400px;">
+                <div id="transitions">
+                    <ul id="trans2D">
+                        <li><a href="#blinds">Blinds</a></li>
+                    </ul>
+                </div>
+                <!-- <li>
                     <div style="float:left;width:250px;height:340px;margin:30px;border-right:1px dashed #333;">
                         <div style="width:220px;height:220px;border-radius:50%;overflow:hidden;margin:45px 0;">
-                            <img src="/Public/Home/imgs/hofu.jpg" alt="" style="width:230px;height:280px;margin-left:-5px;">
+                            <img src="/Public/Upload/2017-09-22/hofu1.jpg" alt="" style="width:230px;height:280px;margin-left:-5px;">
                         </div>
                     </div>
                     <span style="float:left;width:640px;font-size:16px;color:#666;line-height:24px;">
@@ -501,40 +549,23 @@
                         </h1>
                         <p style="text-indent:32px;text-align:justify;color:#333;">日本的稻盛和夫先生之前和你一样也有这样的烦恼，但是稻老现在是两家世界五百强的创始人，被称为商界的经营之圣。这其中的缘由便是他创立了独有的“阿米巴经营手法”。  稻盛和夫早年创业时遭遇的困境，当时在日本京瓷公司，稻盛和夫事必躬亲，既负责研发生产，又负责产品营销。但当公司发展到100人以上时，稻盛和夫已经苦不堪言，他非常渴望有更多的管理者可以分担各重要部门责任。于是，在京瓷公司成立5年之后，为了保持公司的发展活力，稻盛和夫创立了阿米巴经营模式。他把公司细分成许多个“阿米巴”，各个阿米巴组织独立核算，独立经营，并从公司内部选拔阿米巴“巴长”，并给予授权，委以经营重任，从而培育出许多具有经营者意识的领导人，目的就是让人人都成经营者。</p>
                       </span>
-                </li>
+                </li> -->
             </ul>
-            <span class="introducectrl-left" style="display:none;width:50px;height:400px;position:absolute;left:0;top:0;z-index:2;">
-                        <img src="/Public/Home/imgs/normal_right.png" alt="" style="width:50px;height:50px;margin:175px auto;cursor:pointer;background:rgba(0,0,0,0.7);">
-                    </span>
-            <span class="introducectrl-right" style="display:none;width:50px;height:400px;position:absolute;left:950px;top:0;z-index:2;">
-                        <img src="/Public/Home/imgs/normal_left.png" alt="" style="width:50px;height:50px;margin:175px auto;cursor:pointer;background:rgba(0,0,0,0.7);">
-                    </span>
+            <!-- <span id="trans2D" class="introducectrl-left" style="display:none;width:50px;height:400px;position:absolute;left:0;top:0;z-index:102;">
+                <a href="#blinds">
+                    <img src="/Public/Home/imgs/normal_right.png" alt="" style="width:50px;height:50px;margin:175px auto;cursor:pointer;background:rgba(0,0,0,0.7);">
+                </a>
+            </span>
+            <span id="trans2D" class="introducectrl-right" style="display:none;width:50px;height:400px;position:absolute;left:950px;top:0;z-index:102;">
+                <a href="#blinds">
+                    <img src="/Public/Home/imgs/normal_left.png" alt="" style="width:50px;height:50px;margin:175px auto;cursor:pointer;background:rgba(0,0,0,0.7);">
+                </a>
+            </span> -->
         </div>
     </div>
 
     <script>
-        $(function() { ///Public/Home/imgs/amiba-book.jpg
-            var i = 0;
-            var autoplay = function() {
-                i++;
-                if (i <= 1) {
-                    $(".introduce-show").animate({
-                        "left": "-1000px"
-                    }, 500)
-                } else {
-                    i = 0;
-                    $(".introduce-show").animate({
-                        "left": "0"
-                    }, 500)
-                }
-            }
-            var autoplayone = setInterval(autoplay, 4000)
-            $(".introduce-safe").mouseover(function() {
-                clearInterval(autoplayone);
-            })
-            $(".introduce-safe").mouseout(function() {
-                autoplayone = setInterval(autoplay, 4000);
-            })
+        $(function() {
             $(".introduce-safe").mouseover(function() {
                 $(".introducectrl-left").fadeIn();
                 $(".introducectrl-right").fadeIn();
@@ -544,24 +575,24 @@
                     $(".introducectrl-right").fadeOut();
                 })
                 // console.log($showleft)
-            $(".introducectrl-right img").click(function() {
-                var $showleft = $(".introduce-show").css("left")
-                if ($showleft == "0px") {
-                    // alert(111)
-                    $(".introduce-show").animate({
-                        "left": "-1000px"
-                    }, 500)
-                }
-            })
-            $(".introducectrl-left img").click(function() {
-                $showleft = $(".introduce-show").css("left")
-                    // alert($showleft)
-                if ($showleft == "-1000px") {
-                    $(".introduce-show").animate({
-                        "left": "0px"
-                    }, 500)
-                }
-            })
+                // $(".introducectrl-right img").click(function() {
+                //     var $showleft = $(".introduce-show").css("left")
+                //     if ($showleft == "0px") {
+                //         // alert(111)
+                //         $(".introduce-show").animate({
+                //             "left": "-1000px"
+                //         }, 500)
+                //     }
+                // })
+                // $(".introducectrl-left img").click(function() {
+                //     $showleft = $(".introduce-show").css("left")
+                //         // alert($showleft)
+                //     if ($showleft == "-1000px") {
+                //         $(".introduce-show").animate({
+                //             "left": "0px"
+                //         }, 500)
+                //     }
+                // })
         })
     </script>
 
@@ -601,7 +632,7 @@
                 <li>
                     <a class="feet-title" href="<?php echo U('Research/index',array('id'=>4));?>">阿米巴研究</a>
                     <a class="feet-content" href="<?php echo U('Research/index',array('id'=>4));?>" style="margin-top:20px;">新闻咨询</a>
-                    <a class="feet-content" href="<?php echo U('Research/index',array('id'=>4));?>">阿米巴研究文章</a>
+                    <!-- <a class="feet-content" href="<?php echo U('Research/index',array('id'=>4));?>">阿米巴研究文章</a> -->
                 </li>
                 <li style="border:0;">
                     <a class="feet-title" href="<?php echo U('Lists/aboutus');?>">关于我们</a>

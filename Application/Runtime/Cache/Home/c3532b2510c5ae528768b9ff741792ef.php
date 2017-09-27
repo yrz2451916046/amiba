@@ -66,7 +66,7 @@
             width: 100%;
             height: 100px;
             background: #fff;
-            border-bottom: 1px solid #ebebeb;
+            border-bottom: 1.5px solid lightblue;
             position: fixed;
             left: 0;
             top: 0;

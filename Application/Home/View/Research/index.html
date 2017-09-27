@@ -87,49 +87,48 @@
     <div class="research">
         <!-- <p>This is Research page!</p> -->
         <div class="research-safe">
-            <div class="research-safe-high">
-                <span style="width:100%;height:34px;background:#F2C80F;font-size:16px;float:left;line-height:34px;">
-                    <!-- <i style="display:block;width:6px;height:34px;background:#B6940C;float:left;"></i> -->
-                    <p style="margin-left:10px;color:#fff;float:left;">新闻资讯&nbsp;/&nbsp;News</p>
+            <!-- <div class="research-safe-high"> -->
+            <span style="margin:3px 0;display:block;width:100%;height:50px;float:left;line-height:50px;color:#F2C80F;font-size:24px;background:#fff;border-top:2px solid #F2C80F;">
+                    <img src="__PUBLIC__/Upload/2017-09-22/news_hot_fill.png" style="width:26px;height:26px;margin:12px;float:left;">新闻资讯&nbsp;/&nbsp;News information
                 </span>
-                <ul class="news" style="background:#fff;">
-                    <volist name="ambnews" id="vo">
-                        <a href="{:U('Research/detail',array('id'=>$id,'aid'=>$vo['id']))}" class="newslist">
-                            <div style="width:300px;height:200px;overflow:hidden;">
-                                <img src="__PUBLIC__/Upload/{$vo.icon}" alt="" style="width:300px;height:200px;transition: all 0.6s;" class="research-img">
-                            </div>
-                            <h2>{$vo.title}</h2>
-                            <p>{$vo.abstract}</p>
-                        </a>
-                    </volist>
-                </ul>
-                <p style="position:absolute;left:0;bottom:0;width:100%;margin-top:20px;font-size:16px;color:#fff;background:#F2C80F;line-height:40px;height:40px;text-align:center;float:left;">
-                    <b class="append-button" style="cursor:pointer;font-weight:400;">查看更多>></b>
-                </p>
-            </div>
+            <ul class="news" style="background:#fff;">
+                <volist name="ambnews" id="vo">
+                    <a href="{:U('Research/detail',array('id'=>$id,'aid'=>$vo['id']))}" class="newslist">
+                        <div style="width:300px;height:200px;overflow:hidden;">
+                            <img src="__PUBLIC__/Upload/{$vo.icon}" alt="" style="width:300px;height:200px;transition: all 0.6s;" class="research-img">
+                        </div>
+                        <h2>{$vo.title}</h2>
+                        <p>{$vo.abstract}</p>
+                    </a>
+                </volist>
+            </ul>
+            <p style="position:absolute;left:0;bottom:0;width:100%;margin-top:20px;font-size:16px;color:#fff;background:#F2C80F;line-height:40px;height:40px;text-align:center;float:left;">
+                <b class="append-button" style="cursor:pointer;font-weight:400;">查看更多>></b>
+            </p>
+            <!-- </div> -->
         </div>
     </div>
     <script>
-        $(function() {
-            var windex = $(".newslist").length
-            var colHeight = Math.ceil(windex / 3)
-                // console.log(colHeight)
-                // console.log(windex)
-            $(".append-button").click(function() {
-                var researchHeight = $(".research-safe-high").height();
-                // console.log(researchHeight)
-                var i = 372;
-                $(".research-safe-high").css({
-                    "max-height": colHeight * 372 + 94,
-                    "height": researchHeight + i
-                })
-                var researchSafe = $(".research-safe-high").css("max-height");
-                var researchnowHeight = $(".research-safe-high").css("height");
-                // console.log(researchSafe)
-                if (researchSafe == researchnowHeight) {
-                    $(".append-button").text("已经没有更多了~")
-                }
-            })
-        })
+        // $(function() {
+        //     var windex = $(".newslist").length
+        //     var colHeight = Math.ceil(windex / 3)
+        //         // console.log(colHeight)
+        //         // console.log(windex)
+        //     $(".append-button").click(function() {
+        //         var researchHeight = $(".research-safe-high").height();
+        //         // console.log(researchHeight)
+        //         var i = 372;
+        //         $(".research-safe-high").css({
+        //             "max-height": colHeight * 372 + 94,
+        //             "height": researchHeight + i
+        //         })
+        //         var researchSafe = $(".research-safe-high").css("max-height");
+        //         var researchnowHeight = $(".research-safe-high").css("height");
+        //         // console.log(researchSafe)
+        //         if (researchSafe == researchnowHeight) {
+        //             $(".append-button").text("已经没有更多了~")
+        //         }
+        //     })
+        // })
     </script>
 </block>

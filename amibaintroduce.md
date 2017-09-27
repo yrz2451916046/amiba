@@ -14,7 +14,7 @@
             margin: 0 auto;
             height: 400px;
             _background: #fff;
-            _background: linear-gradient(to bottom right, #ECDE1D, #F8F549);
+            background: linear-gradient(to bottom right, #ECDE1D, #F8F549);
             overflow: hidden;
             box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
             position: relative;
@@ -83,6 +83,14 @@
                     <img src="__PUBLIC__/Home/imgs/normal_left.png" alt="" style="width:50px;height:50px;margin:175px auto;cursor:pointer;background:rgba(0,0,0,0.7);">
                 </a>
             </span> -->
+            <div id="slidercontainer">
+                <div id="transitions">
+                    <h2>2D Transitions</h2>
+                    <ul id="trans2D">
+                        <li><a href="#blinds">Blinds</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 

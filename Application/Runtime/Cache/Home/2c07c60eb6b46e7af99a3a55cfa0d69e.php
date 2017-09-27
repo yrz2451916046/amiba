@@ -7,6 +7,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="/Public/Home/js/jquery-1.8.3.min.js"></script>
+    <script src="/Public/Home/js/flux.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(function() {
+            if (!flux.browser.supportsTransitions)
+                alert("Flux Slider requires a browser that supports CSS3 transitions");
+            window.f = new flux.slider('#slider', {
+                autoplay: true,
+                pagination: false
+            });
+            // Setup a listener for user requested transitions
+            $('div#transitions').bind('click', function(event) {
+                event.preventDefault();
+                // If this is a 3D transform and the browser doesn't support 3D then inform the user
+                if ($(event.target).closest('ul').is('ul#trans3d') && !flux.browser.supports3d) {
+                    alert("The '" + event.target.innerHTML + "' transition requires a browser that supports 3D transforms");
+                    return;
+                }
+                window.f.next(event.target.href.split('#')[1]);
+            });
+        });
+        // $(function() {
+        //     window.myFlux = $('#slider').flux();
+        // });
+    </script>
     
     <style>
         .course {
@@ -101,7 +125,7 @@
             position: fixed;
             left: 0;
             top: 0;
-            z-index: 5;
+            z-index: 105;
         }
         
         .nav>ul {
@@ -466,6 +490,22 @@
         .getcolor {
             color: #20A0FF!important;
         }
+        
+        .homecourse-safe img:hover {
+            transform: scale(1.1)
+        }
+        
+        .homeintroduce-top img:hover {
+            transform: scale(1.1)
+        }
+        
+        .homeintroduce-bott img:hover {
+            transform: scale(1.1)
+        }
+        
+        .homeresearch-top img:hover {
+            transform: scale(1.1)
+        }
     </style>
 </head>
 
@@ -573,9 +613,9 @@
             <ul style="width:100%;">
                 <p style="width:100%;height:34px;background:#20A0FF;font-size:16px;float:left;margin-top:10px;">
                     <!-- <i style="display:block;width:6px;height:34px;background:#156299;float:left;"></i> -->
-                    <span style="width:300px;margin-left:10px;line-height:34px;color:#fff;font-weight:400;float:left;">
+                    <span style="width:300px;margin-left:30px;line-height:34px;color:#fff;font-weight:400;float:left;">
                         我要报名&nbsp;/&nbsp;Sign up
-                      </span>
+                    </span>
                 </p>
                 <li style="width:60%;margin:0 auto;font-size:14px;font-weight:400;color:#333;padding-bottom:10px;">
                     <label>
@@ -688,7 +728,7 @@
                 <li>
                     <a class="feet-title" href="<?php echo U('Research/index',array('id'=>4));?>">阿米巴研究</a>
                     <a class="feet-content" href="<?php echo U('Research/index',array('id'=>4));?>" style="margin-top:20px;">新闻咨询</a>
-                    <a class="feet-content" href="<?php echo U('Research/index',array('id'=>4));?>">阿米巴研究文章</a>
+                    <!-- <a class="feet-content" href="<?php echo U('Research/index',array('id'=>4));?>">阿米巴研究文章</a> -->
                 </li>
                 <li style="border:0;">
                     <a class="feet-title" href="<?php echo U('Lists/aboutus');?>">关于我们</a>
