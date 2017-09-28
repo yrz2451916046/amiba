@@ -7,56 +7,56 @@
 		<meta name="description" content="站长素材提供Bootstrap模版,Bootstrap教程,Bootstrap中文翻译等相关Bootstrap插件下载" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!-- basic styles -->
-		<link href="/amiba/Public/Admin/assets/css/bootstrap.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="/amiba/Public/Admin/assets/css/font-awesome.min.css" />
+		<link href="/Public/Admin/assets/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="/Public/Admin/assets/css/font-awesome.min.css" />
 		
-        <link rel="stylesheet" type="text/css" href="/amiba/Public/datetimepicker/jquery.datetimepicker.css"/>
+        <link rel="stylesheet" type="text/css" href="/Public/datetimepicker/jquery.datetimepicker.css"/>
 		<!--[if IE 7]>
-		  <link rel="stylesheet" href="/amiba/Public/Admin/assets/css/font-awesome-ie7.min.css" />
+		  <link rel="stylesheet" href="/Public/Admin/assets/css/font-awesome-ie7.min.css" />
 		<![endif]-->
 
 		<!-- page specific plugin styles -->
 
 		<!-- fonts -->
         
-    <link rel="stylesheet" href="/amiba/Public/Home/themes/default/default.css" />
-    <link rel="stylesheet" href="/amiba/Public/Home/plugins/code/prettify.css" />
-    <script charset="utf-8" src="/amiba/Public/Home/js/kindeditor-all.js"></script>
-    <script charset="utf-8" src="/amiba/Public/Home/js/zh-CN.js"></script>
-    <script charset="utf-8" src="/amiba/Public/Home/plugins/code/prettify.js"></script>
+    <link rel="stylesheet" href="/Public/Home/themes/default/default.css" />
+    <link rel="stylesheet" href="/Public/Home/plugins/code/prettify.css" />
+    <script charset="utf-8" src="/Public/Home/js/kindeditor-all.js"></script>
+    <script charset="utf-8" src="/Public/Home/js/zh-CN.js"></script>
+    <script charset="utf-8" src="/Public/Home/plugins/code/prettify.js"></script>
 
 	
 		<!-- ace styles -->
 
-		<link rel="stylesheet" href="/amiba/Public/Admin/assets/css/ace.min.css" />
-		<link rel="stylesheet" href="/amiba/Public/Admin/assets/css/ace-rtl.min.css" />
-		<link rel="stylesheet" href="/amiba/Public/Admin/assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="/Public/Admin/assets/css/ace.min.css" />
+		<link rel="stylesheet" href="/Public/Admin/assets/css/ace-rtl.min.css" />
+		<link rel="stylesheet" href="/Public/Admin/assets/css/ace-skins.min.css" />
 
 		<!--[if lte IE 8]>
-		  <link rel="stylesheet" href="/amiba/Public/Admin/assets/css/ace-ie.min.css" />
+		  <link rel="stylesheet" href="/Public/Admin/assets/css/ace-ie.min.css" />
 		<![endif]-->
 
 		<!-- inline styles related to this page -->
 
 		<!-- ace settings handler -->
 
-		<script src="/amiba/Public/Admin/assets/js/ace-extra.min.js"></script>
+		<script src="/Public/Admin/assets/js/ace-extra.min.js"></script>
         <style>
         .required {
-            background:url(/amiba/Public/Admin/assets/images/red_asterisk.png) no-repeat 98% center!important;
+            background:url(/Public/Admin/assets/images/red_asterisk.png) no-repeat 98% center!important;
         }
         .errors {
-        	background: url(/amiba/Public/Admin/assets/images/invalid.png) no-repeat 98% center!important;
+        	background: url(/Public/Admin/assets/images/invalid.png) no-repeat 98% center!important;
         }
         .trues {
-        	background: #fff url(/amiba/Public/Admin/assets/images/valid.png) no-repeat 98% center!important;
+        	background: #fff url(/Public/Admin/assets/images/valid.png) no-repeat 98% center!important;
         }
         </style>
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         
 		<!--[if lt IE 9]>
-		<script src="/amiba/Public/Admin/assets/js/html5shiv.js"></script>
-		<script src="/amiba/Public/Admin/assets/js/respond.min.js"></script>
+		<script src="/Public/Admin/assets/js/html5shiv.js"></script>
+		<script src="/Public/Admin/assets/js/respond.min.js"></script>
 		<![endif]-->
 	</head>
 
@@ -239,7 +239,7 @@
 
 								<li>
 									<a href="#">
-										<img src="/amiba/Public/Admin/assets/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
+										<img src="/Public/Admin/assets/avatars/avatar.png" class="msg-photo" alt="Alex's Avatar" />
 										<span class="msg-body">
 											<span class="msg-title">
 												<span class="blue">Alex:</span>
@@ -256,7 +256,7 @@
 
 								<li>
 									<a href="#">
-										<img src="/amiba/Public/Admin/assets/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
+										<img src="/Public/Admin/assets/avatars/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
 										<span class="msg-body">
 											<span class="msg-title">
 												<span class="blue">Susan:</span>
@@ -273,7 +273,7 @@
 
 								<li>
 									<a href="#">
-										<img src="/amiba/Public/Admin/assets/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
+										<img src="/Public/Admin/assets/avatars/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
 										<span class="msg-body">
 											<span class="msg-title">
 												<span class="blue">Bob:</span>
@@ -306,7 +306,7 @@
 
 						<li class="light-blue">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<!-- <img class="nav-user-photo" src="/amiba/Public/Upload/<?php echo ($_SESSION['admin']['photo']); ?>" alt="Jason's Photo" /> -->
+								<!-- <img class="nav-user-photo" src="/Public/Upload/<?php echo ($_SESSION['admin']['photo']); ?>" alt="Jason's Photo" /> -->
 								<span class="user-info">
 									<small>欢迎光临,</small>
 									<?php echo ($_SESSION['admin']['name']); ?>
@@ -333,7 +333,7 @@
 								<li class="divider"></li>
 
 								<li>
-									<a href="/amiba/index.php/Admin/Login/loginOut">
+									<a href="/index.php/Admin/Login/loginOut">
 										<i class="icon-off"></i>
 										退出
 									</a>
@@ -408,7 +408,7 @@
 					<ul class="nav nav-list">
 							
 						<li>
-							<a href="/amiba/index.php/Admin" class="dropdown-toggle">
+							<a href="/index.php/Admin" class="dropdown-toggle">
 								<i class="icon-home"></i>
 								<span class="menu-text"> 后台首页 </span>
 							</a>
@@ -424,38 +424,38 @@
 
 							<ul class="submenu">
 								<li>
-									<a href="/amiba/index.php/Admin/Admin/index.html">
+									<a href="/index.php/Admin/Admin/index.html">
 										<i class="icon-double-angle-right"></i>
 										管理员列表
 									</a>
 								</li>
 								<li>
-									<a href="/amiba/index.php/Admin/Admin/add.html">
+									<a href="/index.php/Admin/Admin/add.html">
 										<i class="icon-double-angle-right"></i>
 										添加管理员
 									</a>
 								</li>
 								<li>
-									<a href="/amiba/index.php/Admin/Group/index.html">
+									<a href="/index.php/Admin/Group/index.html">
 										<i class="icon-double-angle-right"></i>
 										管理组列表
 									</a>
 								</li>
 								<li>
-									<a href="/amiba/index.php/Admin/Group/add.html">
+									<a href="/index.php/Admin/Group/add.html">
 										<i class="icon-double-angle-right"></i>
 										添加管理组
 									</a>
 								</li>
 								<li>
-									<a href="/amiba/index.php/Admin/Auth/ruleIndex.html">
+									<a href="/index.php/Admin/Auth/ruleIndex.html">
 										<i class="icon-double-angle-right"></i>
 										权限列表
 									</a>
 								</li>
 
 								<li>
-									<a href="/amiba/index.php/Admin/Auth/addRule.html">
+									<a href="/index.php/Admin/Auth/addRule.html">
 										<i class="icon-double-angle-right"></i>
 										添加权限
 									</a>
@@ -479,14 +479,14 @@
 
 							<ul class="submenu">
 								<li>
-									<a href="/amiba/index.php/Admin/User/index.html">
+									<a href="/index.php/Admin/User/index.html">
 										<i class="icon-double-angle-right"></i>
 										管理员列表
 									</a>
 								</li>
 
 								<li>
-									<a href="/amiba/index.php/Admin/User/add.html">
+									<a href="/index.php/Admin/User/add.html">
 										<i class="icon-double-angle-right"></i>
 										添加管理员
 									</a>
@@ -504,14 +504,14 @@
 
 							<ul class="submenu">
 								<li>
-									<a href="/amiba/index.php/Admin/Type/index.html">
+									<a href="/index.php/Admin/Type/index.html">
 										<i class="icon-double-angle-right"></i>
 										类型列表
 									</a>
 								</li>
 										
 								<li>
-									<a href="/amiba/index.php/Admin/Type/add_parent">
+									<a href="/index.php/Admin/Type/add_parent">
 										<i class="icon-double-angle-right"></i>
 										添加分区
 									</a>
@@ -529,14 +529,14 @@
 
 							<ul class="submenu">
 								<li>
-									<a href="/amiba/index.php/Admin/Category/index.html">
+									<a href="/index.php/Admin/Category/index.html">
 										<i class="icon-double-angle-right"></i>
 										分裂列表
 									</a>
 								</li>
 
 								<li>
-									<a href="/amiba/index.php/Admin/Category/add.html">
+									<a href="/index.php/Admin/Category/add.html">
 										<i class="icon-double-angle-right"></i>
 										添加分类
 									</a>
@@ -554,14 +554,14 @@
 
 							<ul class="submenu">
 								<li>
-									<a href="/amiba/index.php/Admin/Traincourse/index.html">
+									<a href="/index.php/Admin/Traincourse/index.html">
 										<i class="icon-double-angle-right"></i>
 										课程列表
 									</a>
 								</li>
 										
 								<li>
-									<a href="/amiba/index.php/Admin/Traincourse/add.html">
+									<a href="/index.php/Admin/Traincourse/add.html">
 										<i class="icon-double-angle-right"></i>
 										添加课程
 									</a>
@@ -580,14 +580,14 @@
 
 							<ul class="submenu">
 								<li>
-									<a href="/amiba/index.php/Admin/Ambnews/index.html">
+									<a href="/index.php/Admin/Ambnews/index.html">
 										<i class="icon-double-angle-right"></i>
 										新闻列表
 									</a>
 								</li>
 										
 								<li>
-									<a href="/amiba/index.php/Admin/Ambnews/add.html">
+									<a href="/index.php/Admin/Ambnews/add.html">
 										<i class="icon-double-angle-right"></i>
 										添加新闻
 									</a>
@@ -607,14 +607,14 @@
 
 							<ul class="submenu">
 								<li>
-									<a href="/amiba/index.php/Admin/Incourse/index.html">
+									<a href="/index.php/Admin/Incourse/index.html">
 										<i class="icon-double-angle-right"></i>
 										内训案例列表
 									</a>
 								</li>
 										
 								<li>
-									<a href="/amiba/index.php/Admin/Incourse/add.html">
+									<a href="/index.php/Admin/Incourse/add.html">
 										<i class="icon-double-angle-right"></i>
 										添加内训案例
 									</a>
@@ -634,14 +634,14 @@
 
 							<ul class="submenu">
 								<li>
-									<a href="/amiba/index.php/Admin/Lecturer/index.html">
+									<a href="/index.php/Admin/Lecturer/index.html">
 										<i class="icon-double-angle-right"></i>
 										讲师列表
 									</a>
 								</li>
 
 								<li>
-									<a href="/amiba/index.php/Admin/Lecturer/add.html">
+									<a href="/index.php/Admin/Lecturer/add.html">
 										<i class="icon-double-angle-right"></i>
 										添加讲师
 									</a>
@@ -659,14 +659,14 @@
 
 							<ul class="submenu">
 								<li>
-									<a href="/amiba/index.php/Admin/Carousel/index.html">
+									<a href="/index.php/Admin/Carousel/index.html">
 										<i class="icon-double-angle-right"></i>
 										轮播图列表
 									</a>
 								</li>
 
 								<li>
-									<a href="/amiba/index.php/Admin/Carousel/add.html">
+									<a href="/index.php/Admin/Carousel/add.html">
 										<i class="icon-double-angle-right"></i>
 										添加轮播图
 									</a>
@@ -683,13 +683,13 @@
 							</a>
 							<ul class="submenu">
 								<li>
-									<a href="/amiba/index.php/Admin/Adv/index.html">
+									<a href="/index.php/Admin/Adv/index.html">
 										<i class="icon-double-angle-right"></i>
 										广告列表
 									</a>
 								</li>
 								<li>
-									<a href="/amiba/index.php/Admin/Adv/add.html">
+									<a href="/index.php/Admin/Adv/add.html">
 										<i class="icon-double-angle-right"></i>
 										添加广告
 									</a>
@@ -706,7 +706,7 @@
 							</a>
 							<ul class="submenu">
 								<li>
-									<a href="/amiba/index.php/Admin/Config/index.html">
+									<a href="/index.php/Admin/Config/index.html">
 										<i class="icon-double-angle-right"></i>
 										配置信息
 									</a>
@@ -735,12 +735,12 @@
             <script type="text/javascript">
                 try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
             </script>
-            <script src="/amiba/Public/admin/assets/js/jquery-2.0.3.min.js"></script>
+            <script src="/Public/admin/assets/js/jquery-2.0.3.min.js"></script>
 
             <ul class="breadcrumb">
                 <li>
                     <i class="icon-home home-icon"></i>
-                    <a href="/amiba/index.php">后台主页</a>
+                    <a href="/index.php">后台主页</a>
                 </li>
 
                 <li>
@@ -766,7 +766,7 @@
                 <div class="col-xs-12">
                     <!-- PAGE CONTENT BEGINS -->
 
-                    <form name="example" action="/amiba/index.php/Admin/Ambnews/add" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
+                    <form name="example" action="/index.php/Admin/Ambnews/add" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
                         <div class="form-group">
                             <div class="col-sm-9" style="width: 100%">
                             <div class="tabbable">
@@ -868,9 +868,9 @@
     <script>
     KindEditor.ready(function(K) {
       var editor1 = K.create('textarea[name="content"]', {
-        cssPath : '/amiba/Public/Home/plugins/code/prettify.css',
-        uploadJson : '/amiba/Public/Home/upload_json.php',
-        fileManagerJson : '/amiba/Public/Home/file_manager_json.php',
+        cssPath : '/Public/Home/plugins/code/prettify.css',
+        uploadJson : '/Public/Home/upload_json.php',
+        fileManagerJson : '/Public/Home/file_manager_json.php',
         allowFileManager : true,
         afterCreate : function() {
           var self = this;
@@ -890,7 +890,7 @@
     });
 </script>
         <script type="text/javascript">
-            window.jQuery || document.write("<script src='/amiba/Public/admin/assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+            window.jQuery || document.write("<script src='/Public/admin/assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
         </script>
         <script type="text/javascript">
 			$("[name='tid']").change(function(){
@@ -898,7 +898,7 @@
 				if(val == 0){
 					
 				}else{
-					var url="/amiba/index.php/Admin/Ambnews/search/id/"+val;
+					var url="/index.php/Admin/Ambnews/search/id/"+val;
 					$.get(url,function(d){
 						//alert(d);
 						html = "";
@@ -950,7 +950,7 @@
                 $("#form-field-select-2-1").children(':not(:first-child)').remove();
                 $("#form-field-select-2-2").children(':not(:first-child)').remove();
                 $.ajax({
-                    url: "/amiba/index.php/Admin/Ambnews/getChildCate/",
+                    url: "/index.php/Admin/Ambnews/getChildCate/",
                     data: {"cateId": mainCateId},
                     type: "get",
                     success: function(data) {
@@ -967,7 +967,7 @@
                 var mainCateId = $('#form-field-select-2-1').children(':selected').val();
                 $("#form-field-select-2-2").children(':not(:first-child)').remove();
                 $.ajax({
-                    url: "/amiba/index.php/Admin/Ambnews/getChildCate/",
+                    url: "/index.php/Admin/Ambnews/getChildCate/",
                     data: {"cateId": mainCateId},
                     type: "get",
                     success: function(data) {
@@ -1326,55 +1326,55 @@
 
 		<!--[if !IE]> -->
 
-		<!--<script src="/amiba/Public/Admin/assets/js/jquery-2.0.3.min.js"></script>-->
-		<script src="/amiba/Public/Admin/assets/js/jquery-2.0.3.min.js"></script>
+		<!--<script src="/Public/Admin/assets/js/jquery-2.0.3.min.js"></script>-->
+		<script src="/Public/Admin/assets/js/jquery-2.0.3.min.js"></script>
 		
 
 		<!-- <![endif]-->
 
 		<!--[if IE]>
-<script src="/amiba/Public/Admin/assets/js/jquery-1.10.2.min.js"></script>
+<script src="/Public/Admin/assets/js/jquery-1.10.2.min.js"></script>
 <![endif]-->
 
 		<!--[if !IE]> -->
 
 		<script type="text/javascript">
-			window.jQuery || document.write("<script src='/amiba/Public/Admin/assets/js/jquery-2.0.3.min.js'>"+"<"+"script>");
+			window.jQuery || document.write("<script src='/Public/Admin/assets/js/jquery-2.0.3.min.js'>"+"<"+"script>");
 		</script>
 
 		<!-- <![endif]-->
 
 		<!--[if IE]>
 <script type="text/javascript">
- window.jQuery || document.write("<script src='/amiba/Public/Admin/assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");
+ window.jQuery || document.write("<script src='/Public/Admin/assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");
 </script>
 <![endif]-->
 
 		<script type="text/javascript">
-			if("ontouchend" in document) document.write("<script src='/amiba/Public/Admin/assets/js/jquery.mobile.custom.min.js'>"+"<"+"script>");
+			if("ontouchend" in document) document.write("<script src='/Public/Admin/assets/js/jquery.mobile.custom.min.js'>"+"<"+"script>");
 		</script>
-		<script src="/amiba/Public/Admin/assets/js/bootstrap.min.js"></script>
-		<script src="/amiba/Public/Admin/assets/js/typeahead-bs2.min.js"></script>
+		<script src="/Public/Admin/assets/js/bootstrap.min.js"></script>
+		<script src="/Public/Admin/assets/js/typeahead-bs2.min.js"></script>
 
 		<!-- page specific plugin scripts -->
 
 		<!--[if lte IE 8]>
-		  <script src="/amiba/Public/Admin/assets/js/excanvas.min.js"></script>
+		  <script src="/Public/Admin/assets/js/excanvas.min.js"></script>
 		<![endif]-->
 
-		<script src="/amiba/Public/Admin/assets/js/jquery-ui-1.10.3.custom.min.js"></script>
-		<script src="/amiba/Public/Admin/assets/js/jquery.ui.touch-punch.min.js"></script>
-		<script src="/amiba/Public/Admin/assets/js/jquery.slimscroll.min.js"></script>
-		<script src="/amiba/Public/Admin/assets/js/jquery.easy-pie-chart.min.js"></script>
-		<script src="/amiba/Public/Admin/assets/js/jquery.sparkline.min.js"></script>
-		<script src="/amiba/Public/Admin/assets/js/flot/jquery.flot.min.js"></script>
-		<script src="/amiba/Public/Admin/assets/js/flot/jquery.flot.pie.min.js"></script>
-		<script src="/amiba/Public/Admin/assets/js/flot/jquery.flot.resize.min.js"></script>
+		<script src="/Public/Admin/assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script src="/Public/Admin/assets/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="/Public/Admin/assets/js/jquery.slimscroll.min.js"></script>
+		<script src="/Public/Admin/assets/js/jquery.easy-pie-chart.min.js"></script>
+		<script src="/Public/Admin/assets/js/jquery.sparkline.min.js"></script>
+		<script src="/Public/Admin/assets/js/flot/jquery.flot.min.js"></script>
+		<script src="/Public/Admin/assets/js/flot/jquery.flot.pie.min.js"></script>
+		<script src="/Public/Admin/assets/js/flot/jquery.flot.resize.min.js"></script>
 
 		<!-- ace scripts -->
 
-		<script src="/amiba/Public/Admin/assets/js/ace-elements.min.js"></script>
-		<script src="/amiba/Public/Admin/assets/js/ace.min.js"></script>
+		<script src="/Public/Admin/assets/js/ace-elements.min.js"></script>
+		<script src="/Public/Admin/assets/js/ace.min.js"></script>
 
 		<!-- inline scripts related to this page -->
          <script>

@@ -8,29 +8,7 @@
     <title>Document</title>
     <script src="/Public/Home/js/jquery-1.8.3.min.js"></script>
     <script src="/Public/Home/js/flux.min.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" charset="utf-8">
-        $(function() {
-            if (!flux.browser.supportsTransitions)
-                alert("Flux Slider requires a browser that supports CSS3 transitions");
-            window.f = new flux.slider('#slider', {
-                autoplay: true,
-                pagination: false
-            });
-            // Setup a listener for user requested transitions
-            $('div#transitions').bind('click', function(event) {
-                event.preventDefault();
-                // If this is a 3D transform and the browser doesn't support 3D then inform the user
-                if ($(event.target).closest('ul').is('ul#trans3d') && !flux.browser.supports3d) {
-                    alert("The '" + event.target.innerHTML + "' transition requires a browser that supports 3D transforms");
-                    return;
-                }
-                window.f.next(event.target.href.split('#')[1]);
-            });
-        });
-        // $(function() {
-        //     window.myFlux = $('#slider').flux();
-        // });
-    </script>
+
     
     <style>
         .research {
@@ -101,14 +79,13 @@
             overflow: hidden;
             text-indent: 28px;
         }
-        
-        .research-safe-high {
+        /* .research-safe-high {
             float: left;
             background: #fff;
             height: 838px;
             overflow: hidden;
             position: relative;
-        }
+        } */
         
         .research-img:hover {
             transform: scale(1.1);
@@ -563,13 +540,11 @@
     <!-- nav结束 -->
     
     <div class="research">
-        <!-- <p>This is Research page!</p> -->
         <div class="research-safe">
-            <!-- <div class="research-safe-high"> -->
             <span style="margin:3px 0;display:block;width:100%;height:50px;float:left;line-height:50px;color:#F2C80F;font-size:24px;background:#fff;border-top:2px solid #F2C80F;">
                     <img src="/Public/Upload/2017-09-22/news_hot_fill.png" style="width:26px;height:26px;margin:12px;float:left;">新闻资讯&nbsp;/&nbsp;News information
                 </span>
-            <ul class="news" style="background:#fff;">
+            <ul class="news" style="height:744px;width:100%;background:#fff;float:left;padding-bottom:30px;overflow:hidden;">
                 <?php if(is_array($ambnews)): $i = 0; $__LIST__ = $ambnews;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><a href="<?php echo U('Research/detail',array('id'=>$id,'aid'=>$vo['id']));?>" class="newslist">
                         <div style="width:300px;height:200px;overflow:hidden;">
                             <img src="/Public/Upload/<?php echo ($vo["icon"]); ?>" alt="" style="width:300px;height:200px;transition: all 0.6s;" class="research-img">
@@ -578,34 +553,30 @@
                         <p><?php echo ($vo["abstract"]); ?></p>
                     </a><?php endforeach; endif; else: echo "" ;endif; ?>
             </ul>
-            <p style="position:absolute;left:0;bottom:0;width:100%;margin-top:20px;font-size:16px;color:#fff;background:#F2C80F;line-height:40px;height:40px;text-align:center;float:left;">
+            <p style="width:100%;font-size:16px;color:#fff;background:#F2C80F;line-height:40px;height:40px;text-align:center;float:left;">
                 <b class="append-button" style="cursor:pointer;font-weight:400;">查看更多>></b>
             </p>
-            <!-- </div> -->
         </div>
     </div>
     <script>
-        // $(function() {
-        //     var windex = $(".newslist").length
-        //     var colHeight = Math.ceil(windex / 3)
-        //         // console.log(colHeight)
-        //         // console.log(windex)
-        //     $(".append-button").click(function() {
-        //         var researchHeight = $(".research-safe-high").height();
-        //         // console.log(researchHeight)
-        //         var i = 372;
-        //         $(".research-safe-high").css({
-        //             "max-height": colHeight * 372 + 94,
-        //             "height": researchHeight + i
-        //         })
-        //         var researchSafe = $(".research-safe-high").css("max-height");
-        //         var researchnowHeight = $(".research-safe-high").css("height");
-        //         // console.log(researchSafe)
-        //         if (researchSafe == researchnowHeight) {
-        //             $(".append-button").text("已经没有更多了~")
-        //         }
-        //     })
-        // })
+        $(function() {
+            var windex = $(".newslist").length;
+            var colHeight = Math.ceil(windex / 3);
+            // console.log(colHeight)
+            $(".append-button").click(function() {
+                var researchHeight = $(".news").height();
+                var sigHeight = 372;
+                $(".news").css({
+                    "max-height": colHeight * 372,
+                    "height": researchHeight + sigHeight
+                })
+                var newsSafe = $(".news").css("max-height");
+                var newsnowHeight = $(".news").css("height");
+                if (newsnowHeight == newsSafe) {
+                    $(".append-button").text("已经没有更多了~")
+                }
+            })
+        })
     </script>
 
     <!-- homepage结束 -->

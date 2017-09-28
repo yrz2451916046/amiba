@@ -8,12 +8,14 @@
     <title>Document</title>
     <script src="/Public/Home/js/jquery-1.8.3.min.js"></script>
     <script src="/Public/Home/js/flux.min.js" type="text/javascript" charset="utf-8"></script>
+
+    
     <script type="text/javascript" charset="utf-8">
         $(function() {
             if (!flux.browser.supportsTransitions)
                 alert("Flux Slider requires a browser that supports CSS3 transitions");
             window.f = new flux.slider('#slider', {
-                autoplay: true,
+                autoplay: false,
                 pagination: false
             });
             // Setup a listener for user requested transitions
@@ -31,8 +33,6 @@
         //     window.myFlux = $('#slider').flux();
         // });
     </script>
-    
-
     <style>
         .introduce {
             width: 100%;
@@ -53,9 +53,9 @@
         }
         
         .introduce-show {
-            width: 200%;
+            width: 100%;
             height: 100%;
-            position: absolute;
+            position: relative;
             top: 0;
             left: 0;
         }
@@ -64,6 +64,13 @@
             width: 1000px;
             height: 100%;
             float: left;
+        }
+        
+        #transitions {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 102;
         }
     </style>
 
@@ -551,16 +558,16 @@
                       </span>
                 </li> -->
             </ul>
-            <!-- <span id="trans2D" class="introducectrl-left" style="display:none;width:50px;height:400px;position:absolute;left:0;top:0;z-index:102;">
-                <a href="#blinds">
+            <span class="introducectrl-left" style="display:none;width:50px;height:400px;position:absolute;left:0;top:0;z-index:102;">
+
                     <img src="/Public/Home/imgs/normal_right.png" alt="" style="width:50px;height:50px;margin:175px auto;cursor:pointer;background:rgba(0,0,0,0.7);">
-                </a>
+
             </span>
-            <span id="trans2D" class="introducectrl-right" style="display:none;width:50px;height:400px;position:absolute;left:950px;top:0;z-index:102;">
-                <a href="#blinds">
+            <span class="introducectrl-right" style="display:none;width:50px;height:400px;position:absolute;left:950px;top:0;z-index:102;">
+
                     <img src="/Public/Home/imgs/normal_left.png" alt="" style="width:50px;height:50px;margin:175px auto;cursor:pointer;background:rgba(0,0,0,0.7);">
-                </a>
-            </span> -->
+
+            </span>
         </div>
     </div>
 
