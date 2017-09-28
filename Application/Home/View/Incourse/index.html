@@ -48,6 +48,12 @@
         .incourse-img:hover {
             transform: scale(1.1);
         }
+        
+        .morebtn:hover {
+            background: #8A2BE2!important;
+            border: 2px solid #fff!important;
+            color: #fff!important;
+        }
     </style>
 </block>
 <block name="main">
@@ -60,7 +66,7 @@
             <img src="" alt="" style="display:block;width:100%;height:400px;background:#fff;float:left;box-shadow: 0 5px 10px rgba(0, 0, 0, .1);">
             <!-- 内训流程结束 -->
             <span style="margin:3px 0;margin-top:40px;display:block;width:100%;height:50px;float:left;line-height:50px;color:#8A2BE2;font-size:24px;background:#fff;border-top:2px solid #8A2BE2;">
-                <img src="__PUBLIC__/Upload/2017-09-22/cascades.png" style="width:26px;height:26px;margin:12px;float:left;">案例见证&nbsp;/&nbsp;Training process
+                <img src="__PUBLIC__/Upload/2017-09-22/cascades.png" style="width:26px;height:26px;margin:12px;float:left;">案例见证&nbsp;/&nbsp;Case witness
             </span>
             <div class="training-case">
                 <volist name="incourse" id="vo">
@@ -70,10 +76,10 @@
                         </a>
                         <ul style="width:625px;height:180px;float:left;margin:25px 0;">
                             <a href="{:U('Incourse/detail',array('id'=>$id,'inid'=>$vo['id']))}" style="display:block;height:28px;width:100%;font-size:18px;line-height:28px;font-weight:400;">{$vo.title}</a>
-
                             <li style="width:100%;height:28px;line-height:28px;font-size:14px;">时间：{$vo.addtime|date="Y-m-d",###}</li>
                             <li style="width:100%;height:56px;line-height:28px;font-size:14px;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;margin-top:12px;">{$vo.abstract}</li>
-                            <a href="{:U('Incourse/detail',array('id'=>$id,'inid'=>$vo['id']))}" style="display:block;width:80px;height:35px;border:2px solid #8A2BE2;margin-top:17px;line-height:40px;text-align:center;font-size:16px;color:#8A2BE2;">    
+                            <a href="{:U('Incourse/detail',array('id'=>$id,'inid'=>$vo['id']))}" style="display:block;width:80px;height:35px;border:2px solid #8A2BE2;margin-top:17px;line-height:40px;text-align:center;font-size:16px;color:#8A2BE2;background:#fff;transition: all 0.5s ease 0s;"
+                                class="morebtn">    
                           MORE
                         </a>
                         </ul>
@@ -89,7 +95,8 @@
                             <a href="{:U('Incourse/detail',array('id'=>$id,'inid'=>$vo['id']))}" style="display:block;height:28px;width:100%;font-size:18px;line-height:28px;font-weight:400;">{$vo.title}</a>
                             <li style="width:100%;height:28px;line-height:28px;font-size:14px;">时间：{$vo.addtime|date="Y-m-d",###}</li>
                             <li style="width:100%;height:56px;line-height:28px;font-size:14px;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;margin-top:12px;">{$vo.abstract}</li>
-                            <a href="{:U('Incourse/detail',array('id'=>$id,'inid'=>$vo['id']))}" style="display:block;width:80px;height:35px;border:2px solid #8A2BE2;margin-top:17px;line-height:40px;text-align:center;font-size:16px;color:#8A2BE2;">    
+                            <a href="{:U('Incourse/detail',array('id'=>$id,'inid'=>$vo['id']))}" style="display:block;width:80px;height:35px;border:2px solid #8A2BE2;margin-top:17px;line-height:40px;text-align:center;font-size:16px;color:#8A2BE2;background:#fff;transition: all 0.5s ease 0s;"
+                                class="morebtn">    
                           MORE
                         </a>
                         </ul>

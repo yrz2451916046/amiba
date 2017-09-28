@@ -8,12 +8,14 @@
     <title>Document</title>
     <script src="/Public/Home/js/jquery-1.8.3.min.js"></script>
     <script src="/Public/Home/js/flux.min.js" type="text/javascript" charset="utf-8"></script>
+
+    
     <script type="text/javascript" charset="utf-8">
         $(function() {
             if (!flux.browser.supportsTransitions)
                 alert("Flux Slider requires a browser that supports CSS3 transitions");
             window.f = new flux.slider('#slider', {
-                autoplay: true,
+                autoplay: false,
                 pagination: false
             });
             // Setup a listener for user requested transitions
@@ -31,8 +33,6 @@
         //     window.myFlux = $('#slider').flux();
         // });
     </script>
-    
-
     <style>
         .introduce {
             width: 100%;
@@ -47,15 +47,15 @@
             height: 400px;
             _background: #fff;
             _background: linear-gradient(to bottom right, #ECDE1D, #F8F549);
-            overflow: hidden;
+            _overflow: hidden;
             box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
             position: relative;
         }
         
         .introduce-show {
-            width: 200%;
+            width: 100%;
             height: 100%;
-            position: absolute;
+            position: relative;
             top: 0;
             left: 0;
         }
@@ -64,6 +64,13 @@
             width: 1000px;
             height: 100%;
             float: left;
+        }
+        
+        #transitions {
+            position: absolute;
+            bottom: 175px;
+            right: -50px;
+            z-index: 102;
         }
     </style>
 
@@ -91,7 +98,7 @@
         
         html {
             font-family: 'Microsoft Yahei', "Helvetica Neue", Helvetica, Arial, sans-serif, 'Lucida Grande', 'Lucida Sans Unicode', Verdana;
-            background: rgb(230, 230, 230);
+            background: rgb(245, 245, 245);
         }
         
         .nav {
@@ -220,6 +227,12 @@
             margin: 0 auto;
         }
         
+        .homecourse-content>p {
+            font-size: 13px;
+            color: #333;
+            margin-left: 12px;
+        }
+        
         .homecourse-safe>span {
             box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
         }
@@ -228,6 +241,10 @@
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
             transition: box-shadow 0.5s;
         }
+        /* .homeclasslist:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5)!important;
+            transition: box-shadow 0.5s!important;
+        } */
         
         .homeintroduce-safe {
             width: 1000px;
@@ -256,25 +273,25 @@
             padding-right: 25px;
             box-sizing: border-box;
             float: left;
-            background: linear-gradient(#fc7382, #fc7de5);
+            background: linear-gradient(#fc7382, #F793B4);
             background-size: cover;
             position: relative;
             overflow: hidden;
             box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
         }
-        
-        .homecourse-left {
-            width: 220px;
+        /* .homecourse-left {
+            width: 80px;
             height: 350px;
-            padding-left: 25px;
-            padding-right: 25px;
+            _padding-left: 25px;
+            _padding-right: 25px;
             box-sizing: border-box;
             float: left;
             background: linear-gradient(#fc7382, #fc7de5);
             background-size: cover;
             position: relative;
             overflow: hidden;
-        }
+            border-right: 4px solid rgb(245, 245, 245)
+        } */
         
         .homeintroduce-left:hover {
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
@@ -483,6 +500,14 @@
         .homeresearch-top img:hover {
             transform: scale(1.1)
         }
+        
+        .telephone:hover {
+            background: #20A0FF!important;
+        }
+        
+        .returntop:hover {
+            background: #20A0FF!important;
+        }
     </style>
 </head>
 
@@ -522,7 +547,11 @@
                 <img src="/Public/Upload/2017-09-22/amibajingying.png" alt="" style="width:1000px;height:400px;">
                 <div id="transitions">
                     <ul id="trans2D">
-                        <li><a href="#blinds">Blinds</a></li>
+                        <li style="background:rgba(0,0,0,0.3);">
+                            <a href="#blinds" style="display:block;width:50px;height:50px;background:url(/Public/Home/imgs/normal_left.png);">
+                                <!-- <img src="/Public/Home/imgs/normal_right.png" alt="" style="width:50px;height:50px;margin:175px auto;cursor:pointer;background:rgba(0,0,0,0.7);"> -->
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <!-- <li>
@@ -552,14 +581,14 @@
                 </li> -->
             </ul>
             <!-- <span id="trans2D" class="introducectrl-left" style="display:none;width:50px;height:400px;position:absolute;left:0;top:0;z-index:102;">
-                <a href="#blinds">
+
                     <img src="/Public/Home/imgs/normal_right.png" alt="" style="width:50px;height:50px;margin:175px auto;cursor:pointer;background:rgba(0,0,0,0.7);">
-                </a>
+
             </span>
             <span id="trans2D" class="introducectrl-right" style="display:none;width:50px;height:400px;position:absolute;left:950px;top:0;z-index:102;">
-                <a href="#blinds">
+
                     <img src="/Public/Home/imgs/normal_left.png" alt="" style="width:50px;height:50px;margin:175px auto;cursor:pointer;background:rgba(0,0,0,0.7);">
-                </a>
+
             </span> -->
         </div>
     </div>
@@ -598,11 +627,11 @@
 
     <!-- homepage结束 -->
     <!-- 按钮 -->
-    <span class="telephone" style="display:block;width:170px;height:50px;margin-bottom:10px;position:fixed;top:350px;right:-120px;background:rgb(210,210,210);">
+    <span class="telephone" style="display:block;width:170px;height:50px;margin-bottom:10px;position:fixed;top:350px;right:-120px;background:rgb(210,210,210);transition: all 0.5s ease 0s;">
         <img src="/Public/Home/imgs/telephone.png" alt="" style="width:36px;height:36px;margin:7px;cursor:pointer;float:left;">
         <span style="display:block;width:120px;float:left;height:50px;font-size:20px;color:#fff;line-height:50px;">021-0000000</span>
     </span>
-    <span class="returntop" style="display:block;width:140px;height:50px;margin-bottom:10px;position:fixed;top:410px;right:-90px;background:rgb(210,210,210);">
+    <span class="returntop" style="display:block;width:140px;height:50px;margin-bottom:10px;position:fixed;top:410px;right:-90px;background:rgb(210,210,210);transition: all 0.5s ease 0s;">
         <img src="/Public/Home/imgs/pull_up.png" alt="" style="width:36px;height:36px;margin:7px;cursor:pointer;float:left;">
     </span>
     <!-- 按钮结束 -->
@@ -621,8 +650,8 @@
                 <li>
                     <a class="feet-title" href="<?php echo U('Traincourse/index',array('id'=>2));?>">阿米巴课程</a>
                     <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>" style="margin-top:20px;">课程简介</a>
-                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>">讲师介绍</a>
-                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>">课程报名</a>
+                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>#tec">讲师介绍</a>
+                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>#sup">课程报名</a>
                 </li>
                 <li>
                     <a class="feet-title" href="<?php echo U('Incourse/index',array('id'=>3));?>">阿米巴内训</a>

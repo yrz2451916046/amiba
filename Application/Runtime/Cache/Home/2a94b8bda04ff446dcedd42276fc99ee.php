@@ -8,29 +8,7 @@
     <title>Document</title>
     <script src="/Public/Home/js/jquery-1.8.3.min.js"></script>
     <script src="/Public/Home/js/flux.min.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" charset="utf-8">
-        $(function() {
-            if (!flux.browser.supportsTransitions)
-                alert("Flux Slider requires a browser that supports CSS3 transitions");
-            window.f = new flux.slider('#slider', {
-                autoplay: true,
-                pagination: false
-            });
-            // Setup a listener for user requested transitions
-            $('div#transitions').bind('click', function(event) {
-                event.preventDefault();
-                // If this is a 3D transform and the browser doesn't support 3D then inform the user
-                if ($(event.target).closest('ul').is('ul#trans3d') && !flux.browser.supports3d) {
-                    alert("The '" + event.target.innerHTML + "' transition requires a browser that supports 3D transforms");
-                    return;
-                }
-                window.f.next(event.target.href.split('#')[1]);
-            });
-        });
-        // $(function() {
-        //     window.myFlux = $('#slider').flux();
-        // });
-    </script>
+
     
     <style>
         * {
@@ -56,7 +34,7 @@
         
         html {
             font-family: 'Microsoft Yahei', "Helvetica Neue", Helvetica, Arial, sans-serif, 'Lucida Grande', 'Lucida Sans Unicode', Verdana;
-            background: rgb(230, 230, 230);
+            background: rgb(245, 245, 245);
         }
         
         .nav {
@@ -185,6 +163,12 @@
             margin: 0 auto;
         }
         
+        .homecourse-content>p {
+            font-size: 13px;
+            color: #333;
+            margin-left: 12px;
+        }
+        
         .homecourse-safe>span {
             box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
         }
@@ -193,6 +177,10 @@
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
             transition: box-shadow 0.5s;
         }
+        /* .homeclasslist:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5)!important;
+            transition: box-shadow 0.5s!important;
+        } */
         
         .homeintroduce-safe {
             width: 1000px;
@@ -221,25 +209,25 @@
             padding-right: 25px;
             box-sizing: border-box;
             float: left;
-            background: linear-gradient(#fc7382, #fc7de5);
+            background: linear-gradient(#fc7382, #F793B4);
             background-size: cover;
             position: relative;
             overflow: hidden;
             box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
         }
-        
-        .homecourse-left {
-            width: 220px;
+        /* .homecourse-left {
+            width: 80px;
             height: 350px;
-            padding-left: 25px;
-            padding-right: 25px;
+            _padding-left: 25px;
+            _padding-right: 25px;
             box-sizing: border-box;
             float: left;
             background: linear-gradient(#fc7382, #fc7de5);
             background-size: cover;
             position: relative;
             overflow: hidden;
-        }
+            border-right: 4px solid rgb(245, 245, 245)
+        } */
         
         .homeintroduce-left:hover {
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
@@ -448,6 +436,14 @@
         .homeresearch-top img:hover {
             transform: scale(1.1)
         }
+        
+        .telephone:hover {
+            background: #20A0FF!important;
+        }
+        
+        .returntop:hover {
+            background: #20A0FF!important;
+        }
     </style>
 </head>
 
@@ -517,21 +513,36 @@
 
             <div id="homecourse">
                 <div class="homecourse-safe">
-                    <span style="display:block;float:left;width:970px;height:350px;margin-top:50px;">
-                    <div class="homecourse-left">
-                        <p style="display:block;color:#fff;border-bottom: solid 1px #fff;padding-bottom:15px;margin-top:28px;margin-bottom:20px;font-size:30px;">阿米巴<br>公开课程</p>
-                        <a class="font-changecolor" href="<?php echo U('Traincourse/index',array('id'=>2));?>" style="color:#8D0840;margin-left:-6px;display:block;margin-bottom:10px;white-space:nowrap;font-size:14px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">【面授】<?php echo ($traincourse["name"]); ?></a>
-                        <!-- <a class="font-changecolor" href="#" style="color:#8D0840;margin-left:-6px;display:block;margin-bottom:10px;white-space:nowrap;font-size:14px;">【面授】阿米巴精英课程</a> -->
-                    </div>
-                    <a href="<?php echo U('Traincourse/index',array('id'=>2));?>" style="display:block;width:750px;height:350px;background:#fff;float:left;">
-                        <div style="width:100%;height:60%;overflow:hidden;">
-                            <img src="/Public/Upload/<?php echo ($traincourse["icon"]); ?>" alt="" style="display:block;width:100%;height:100%;transition: all 0.6s;">
+                    <span style="display:block;float:left;width:970px;height:350px;margin-top:50px;background:#fff;">
+                        <div style="width:100%;height:220px;float:left;overflow:hidden;">
+                            <img src="/Public/Upload/2017-09-22/classbanner1.jpg" alt="" style="width:100%;height:220px;float:left;transition: all 0.6s;">
                         </div>
-                        <p style="height:40px;padding-left:20px;font-size:22px;line-height:40px;color:#333;">课程简介</p>
-                        <span style="display:block;width:94%;height:80px;font-size:14px;line-height:24px;text-indent:28px;padding-left:20px;padding-right:20px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;">
-                            <?php echo ($traincourse["overview"]); ?>
-                        </span>
-                    </a>
+                        <div style="width:100%;height:130px;float:left;background:rgb(230,230,230);">
+                            <div class="homecourse-content" style="width:32%;height:100px;float:left;margin:15px 0;border-right:1px dashed #666;">
+                                <p>时间：2017-09-22 00:09</p>
+                                <p>地区：深圳</p>
+                                <p>地址：深圳富苑皇冠假日酒店</p>
+                                <p>出行：地铁龙岗线老街站</p>
+                                <p>语言：中文</p>
+                                <p>咨询：Vinky：021-61536928；13918141008</p>
+                            </div>
+                            <div class="homecourse-content" style="width:32%;height:100px;float:left;margin:15px 0;border-right:1px dashed #666;">
+                                <p>时间：2017-09-22 00:09</p>
+                                <p>地区：深圳</p>
+                                <p>地址：深圳富苑皇冠假日酒店</p>
+                                <p>出行：地铁龙岗线老街站</p>
+                                <p>语言：中文</p>
+                                <p>咨询：Vinky：021-61536928；13918141008</p>
+                            </div>
+                            <div class="homecourse-content" style="width:32%;height:100px;float:left;margin:15px 0;">
+                                <p>时间：2017-09-22 00:09</p>
+                                <p>地区：深圳</p>
+                                <p>地址：深圳富苑皇冠假日酒店</p>
+                                <p>出行：地铁龙岗线老街站</p>
+                                <p>语言：中文</p>
+                                <p>咨询：Vinky：021-61536928；13918141008</p>
+                            </div>
+                        </div>
                     </span>
                 </div>
             </div>
@@ -550,16 +561,6 @@
                                 <?php echo ($vv["title"]); ?>
                                 </a>
                             </li><?php endforeach; endif; else: echo "" ;endif; ?>
-                           <!--  <li style="width:100%;height:20px;margin:10px 0;">
-                                <a href="#" style="float:left;width:100%;height:100%;display:block;overflow:hidden;font-size:14px;color:#888;text-overflow:ellipsis;white-space:nowrap;">
-                                阿米巴经营课程阿米巴经营课程阿米巴经营课程
-                                </a>
-                            </li>
-                            <li style="width:100%;height:20px;margin:10px 0;">
-                                <a href="#" style="float:left;width:100%;height:100%;display:block;overflow:hidden;font-size:14px;color:#888;text-overflow:ellipsis;white-space:nowrap;">
-                                阿米巴经营课程阿米巴经营课程阿米巴经营课程
-                                </a>
-                            </li> -->
                         </ul>
                     </div>
                     <div class="homeintroduce-center">
@@ -599,7 +600,8 @@
             </div>
             <div class="homeintroduce-left">
                 <p href="#" style="display:block;color:#fff;border-bottom: solid 1px #fff;padding-bottom:15px;margin-top:28px;margin-bottom:20px;font-size:30px;">阿米巴<br>内训案例</p>
-                <?php if(is_array($incourseright)): $i = 0; $__LIST__ = $incourseright;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vr): $mod = ($i % 2 );++$i;?><a class="font-changecolor" href="<?php echo U('Incourse/detail',array('id'=>3,'inid'=>$vr['id']));?>" style="color:#205A56;margin-left:-6px;display:block;margin-bottom:10px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:14px;">【面授】<?php echo ($vr["title"]); ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
+                <img src="/Public/Upload/2017-09-22/cascades_1.png" alt="" style="width:170px;height:170px;">
+                <!-- <?php if(is_array($incourseright)): $i = 0; $__LIST__ = $incourseright;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vr): $mod = ($i % 2 );++$i;?><a class="font-changecolor" href="<?php echo U('Incourse/detail',array('id'=>3,'inid'=>$vr['id']));?>" style="color:#205A56;margin-left:-6px;display:block;margin-bottom:10px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:14px;">【面授】<?php echo ($vr["title"]); ?></a><?php endforeach; endif; else: echo "" ;endif; ?> -->
                 <!-- <a class="font-changecolor" href="#" style="color:#0994a1;margin-left:-6px;display:block;margin-bottom:10px;white-space:nowrap;font-size:14px;">【面授】阿米巴精英课程</a> -->
             </div>
             </span>
@@ -612,7 +614,8 @@
                 <span style="display:block;float:left;width:1000px;height:350px;margin-top:50px;">
                         <div class="homeresearch-left">
                             <p style="display:block;color:#fff;border-bottom: solid 1px #fff;padding-bottom:15px;margin-top:28px;margin-bottom:20px;font-size:30px;">阿米巴<br>新闻资讯</p>
-                            <?php if(is_array($ambnewsleft)): $i = 0; $__LIST__ = $ambnewsleft;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vl): $mod = ($i % 2 );++$i;?><a class="font-changecolor" href="<?php echo U('Research/detail',array('id'=>4,'aid'=>$vl['id']));?>" style="color:#8D0840;margin-left:-6px;display:block;margin-bottom:10px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:14px;">【面授】<?php echo ($vl["title"]); ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
+                            <img src="/Public/Upload/2017-09-22/news_hot_1.png" alt="" style="width:170px;height:170px;">
+                            <!-- <?php if(is_array($ambnewsleft)): $i = 0; $__LIST__ = $ambnewsleft;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vl): $mod = ($i % 2 );++$i;?><a class="font-changecolor" href="<?php echo U('Research/detail',array('id'=>4,'aid'=>$vl['id']));?>" style="color:#8D0840;margin-left:-6px;display:block;margin-bottom:10px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:14px;">【面授】<?php echo ($vl["title"]); ?></a><?php endforeach; endif; else: echo "" ;endif; ?> -->
                             <!-- <a class="font-changecolor" href="#" style="color:#8D0840;margin-left:-6px;display:block;margin-bottom:10px;white-space:nowrap;font-size:14px;">【面授】阿米巴精英课程</a> -->
                         </div>
                         <div class="homeintroduce-center">
@@ -682,11 +685,11 @@
     
     <!-- homepage结束 -->
     <!-- 按钮 -->
-    <span class="telephone" style="display:block;width:170px;height:50px;margin-bottom:10px;position:fixed;top:350px;right:-120px;background:rgb(210,210,210);">
+    <span class="telephone" style="display:block;width:170px;height:50px;margin-bottom:10px;position:fixed;top:350px;right:-120px;background:rgb(210,210,210);transition: all 0.5s ease 0s;">
         <img src="/Public/Home/imgs/telephone.png" alt="" style="width:36px;height:36px;margin:7px;cursor:pointer;float:left;">
         <span style="display:block;width:120px;float:left;height:50px;font-size:20px;color:#fff;line-height:50px;">021-0000000</span>
     </span>
-    <span class="returntop" style="display:block;width:140px;height:50px;margin-bottom:10px;position:fixed;top:410px;right:-90px;background:rgb(210,210,210);">
+    <span class="returntop" style="display:block;width:140px;height:50px;margin-bottom:10px;position:fixed;top:410px;right:-90px;background:rgb(210,210,210);transition: all 0.5s ease 0s;">
         <img src="/Public/Home/imgs/pull_up.png" alt="" style="width:36px;height:36px;margin:7px;cursor:pointer;float:left;">
     </span>
     <!-- 按钮结束 -->
@@ -705,8 +708,8 @@
                 <li>
                     <a class="feet-title" href="<?php echo U('Traincourse/index',array('id'=>2));?>">阿米巴课程</a>
                     <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>" style="margin-top:20px;">课程简介</a>
-                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>">讲师介绍</a>
-                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>">课程报名</a>
+                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>#tec">讲师介绍</a>
+                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>#sup">课程报名</a>
                 </li>
                 <li>
                     <a class="feet-title" href="<?php echo U('Incourse/index',array('id'=>3));?>">阿米巴内训</a>

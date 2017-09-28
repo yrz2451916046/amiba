@@ -8,29 +8,7 @@
     <title>Document</title>
     <script src="/Public/Home/js/jquery-1.8.3.min.js"></script>
     <script src="/Public/Home/js/flux.min.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" charset="utf-8">
-        $(function() {
-            if (!flux.browser.supportsTransitions)
-                alert("Flux Slider requires a browser that supports CSS3 transitions");
-            window.f = new flux.slider('#slider', {
-                autoplay: true,
-                pagination: false
-            });
-            // Setup a listener for user requested transitions
-            $('div#transitions').bind('click', function(event) {
-                event.preventDefault();
-                // If this is a 3D transform and the browser doesn't support 3D then inform the user
-                if ($(event.target).closest('ul').is('ul#trans3d') && !flux.browser.supports3d) {
-                    alert("The '" + event.target.innerHTML + "' transition requires a browser that supports 3D transforms");
-                    return;
-                }
-                window.f.next(event.target.href.split('#')[1]);
-            });
-        });
-        // $(function() {
-        //     window.myFlux = $('#slider').flux();
-        // });
-    </script>
+
     
     <style>
         .course {
@@ -114,7 +92,7 @@
         
         html {
             font-family: 'Microsoft Yahei', "Helvetica Neue", Helvetica, Arial, sans-serif, 'Lucida Grande', 'Lucida Sans Unicode', Verdana;
-            background: rgb(230, 230, 230);
+            background: rgb(245, 245, 245);
         }
         
         .nav {
@@ -243,6 +221,12 @@
             margin: 0 auto;
         }
         
+        .homecourse-content>p {
+            font-size: 13px;
+            color: #333;
+            margin-left: 12px;
+        }
+        
         .homecourse-safe>span {
             box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
         }
@@ -251,6 +235,10 @@
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
             transition: box-shadow 0.5s;
         }
+        /* .homeclasslist:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5)!important;
+            transition: box-shadow 0.5s!important;
+        } */
         
         .homeintroduce-safe {
             width: 1000px;
@@ -279,25 +267,25 @@
             padding-right: 25px;
             box-sizing: border-box;
             float: left;
-            background: linear-gradient(#fc7382, #fc7de5);
+            background: linear-gradient(#fc7382, #F793B4);
             background-size: cover;
             position: relative;
             overflow: hidden;
             box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
         }
-        
-        .homecourse-left {
-            width: 220px;
+        /* .homecourse-left {
+            width: 80px;
             height: 350px;
-            padding-left: 25px;
-            padding-right: 25px;
+            _padding-left: 25px;
+            _padding-right: 25px;
             box-sizing: border-box;
             float: left;
             background: linear-gradient(#fc7382, #fc7de5);
             background-size: cover;
             position: relative;
             overflow: hidden;
-        }
+            border-right: 4px solid rgb(245, 245, 245)
+        } */
         
         .homeintroduce-left:hover {
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
@@ -506,6 +494,14 @@
         .homeresearch-top img:hover {
             transform: scale(1.1)
         }
+        
+        .telephone:hover {
+            background: #20A0FF!important;
+        }
+        
+        .returntop:hover {
+            background: #20A0FF!important;
+        }
     </style>
 </head>
 
@@ -570,8 +566,8 @@
                     <li style="width:100%;float:left;">
                         <!-- <h2 style="height:40px;line-height:40px;">课程详情：</h2> -->
                         <span style="display:block;width:100%;_height:300px;">
-                            <div class="other-timer" style="width:100%;height:120px;font-size:12px;margin-top:20px;">
-                                <div style="width:32%;float:left;border-right:1px dashed #666;margin-top:10px;">
+                            <div class="other-timer" style="width:100%;height:120px;font-size:12px;margin-top:20px;background:rgb(230, 230, 230);">
+                                <div style="width:32%;float:left;border-right:1px dashed #666;margin-left:10px;margin-top:10px;">
                                     <p>时间：<?php echo (date("Y-m-d H:i",$vv["starttime"])); ?></p>
                                     <p>地区：<?php echo ($vv["area"]); ?></p>
                                     <p>地址：<?php echo ($vv["address"]); ?></p>
@@ -596,7 +592,7 @@
                                     <p>咨询：<?php echo ($vv["consult"]); ?></p>
                                 </div>
                             </div>
-                            <span class="sign-up-button" style="cursor:pointer;display:block;width:100px;height:40px;margin:12px auto;line-height:40px;text-align:center;background:#20A0FF;color:#fff;font-size:14px;font-weight:600;">
+                            <span class="sign-up-button" style="cursor:pointer;display:block;width:100px;height:40px;margin:12px auto;line-height:40px;text-align:center;background:#20A0FF;color:#fff;font-size:14px;font-weight:600;border-radius:20px;">
                                 课程报名
                             </span>
                         <p style="font-size:16px;color:#444;border-bottom:1px solid #888;height:30px;line-height:30px;margin:10px 0;">课程概述&nbsp;/&nbsp;Overview</p>
@@ -605,6 +601,7 @@
                         <?php echo ($vv["discount"]); ?>
                         <p style="font-size:16px;color:#444;border-bottom:1px solid #888;height:30px;line-height:30px;margin:10px 0;">课程纲要&nbsp;/&nbsp;Outline</p>
                         <?php echo ($vv["outline"]); ?>
+                        <a name="tec" style="display:block;float:left;margin-top:-60px;"></a>
                         <p style="font-size:16px;color:#444;border-bottom:1px solid #888;height:30px;line-height:30px;margin:10px 0;">讲师介绍&nbsp;/&nbsp;Lecturer</p>
                         <?php echo ($vv["lecintroduce"]); ?>
                         </span>
@@ -612,12 +609,13 @@
                 </ul><?php endforeach; endif; else: echo "" ;endif; ?>
             <ul style="width:100%;">
                 <p style="width:100%;height:34px;background:#20A0FF;font-size:16px;float:left;margin-top:10px;">
+                    <a name="sup" style="display:block;margin-top:-100px;"></a>
                     <!-- <i style="display:block;width:6px;height:34px;background:#156299;float:left;"></i> -->
                     <span style="width:300px;margin-left:30px;line-height:34px;color:#fff;font-weight:400;float:left;">
                         我要报名&nbsp;/&nbsp;Sign up
                     </span>
                 </p>
-                <li style="width:60%;margin:0 auto;font-size:14px;font-weight:400;color:#333;padding-bottom:10px;">
+                <li style="width:60%;margin-left:32px;font-size:14px;font-weight:400;color:#333;padding-bottom:10px;">
                     <label>
                         <span style="display:block;width:80px;float:left;height:55px;line-height:55px;margin-top:20px;">姓名：</span>
                         <input type="text" placeholder="请输入姓名" style="width:300px;height:35px;border-radius:5px;margin:10px auto;margin-top:30px;border:1px solid #475669;font-size:16px;line-height:40px;"><br/>
@@ -694,11 +692,11 @@
 
     <!-- homepage结束 -->
     <!-- 按钮 -->
-    <span class="telephone" style="display:block;width:170px;height:50px;margin-bottom:10px;position:fixed;top:350px;right:-120px;background:rgb(210,210,210);">
+    <span class="telephone" style="display:block;width:170px;height:50px;margin-bottom:10px;position:fixed;top:350px;right:-120px;background:rgb(210,210,210);transition: all 0.5s ease 0s;">
         <img src="/Public/Home/imgs/telephone.png" alt="" style="width:36px;height:36px;margin:7px;cursor:pointer;float:left;">
         <span style="display:block;width:120px;float:left;height:50px;font-size:20px;color:#fff;line-height:50px;">021-0000000</span>
     </span>
-    <span class="returntop" style="display:block;width:140px;height:50px;margin-bottom:10px;position:fixed;top:410px;right:-90px;background:rgb(210,210,210);">
+    <span class="returntop" style="display:block;width:140px;height:50px;margin-bottom:10px;position:fixed;top:410px;right:-90px;background:rgb(210,210,210);transition: all 0.5s ease 0s;">
         <img src="/Public/Home/imgs/pull_up.png" alt="" style="width:36px;height:36px;margin:7px;cursor:pointer;float:left;">
     </span>
     <!-- 按钮结束 -->
@@ -717,8 +715,8 @@
                 <li>
                     <a class="feet-title" href="<?php echo U('Traincourse/index',array('id'=>2));?>">阿米巴课程</a>
                     <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>" style="margin-top:20px;">课程简介</a>
-                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>">讲师介绍</a>
-                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>">课程报名</a>
+                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>#tec">讲师介绍</a>
+                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>#sup">课程报名</a>
                 </li>
                 <li>
                     <a class="feet-title" href="<?php echo U('Incourse/index',array('id'=>3));?>">阿米巴内训</a>
