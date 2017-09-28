@@ -34,7 +34,7 @@
         
         html {
             font-family: 'Microsoft Yahei', "Helvetica Neue", Helvetica, Arial, sans-serif, 'Lucida Grande', 'Lucida Sans Unicode', Verdana;
-            background: rgb(230, 230, 230);
+            background: rgb(245, 245, 245);
         }
         
         .nav {

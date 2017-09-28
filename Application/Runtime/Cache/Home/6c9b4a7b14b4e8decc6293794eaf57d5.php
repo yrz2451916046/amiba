@@ -47,7 +47,7 @@
             height: 400px;
             _background: #fff;
             _background: linear-gradient(to bottom right, #ECDE1D, #F8F549);
-            overflow: hidden;
+            _overflow: hidden;
             box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
             position: relative;
         }
@@ -68,8 +68,8 @@
         
         #transitions {
             position: absolute;
-            bottom: 0;
-            right: 0;
+            bottom: 175px;
+            right: -50px;
             z-index: 102;
         }
     </style>
@@ -98,7 +98,7 @@
         
         html {
             font-family: 'Microsoft Yahei', "Helvetica Neue", Helvetica, Arial, sans-serif, 'Lucida Grande', 'Lucida Sans Unicode', Verdana;
-            background: rgb(230, 230, 230);
+            background: rgb(245, 245, 245);
         }
         
         .nav {
