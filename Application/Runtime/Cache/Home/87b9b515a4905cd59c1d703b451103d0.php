@@ -244,19 +244,25 @@
             height: 400px;
             margin: 0 auto;
         }
-        /* .homecourse-safe>span {
+        
+        .homecourse-content>p {
+            font-size: 13px;
+            color: #333;
+            margin-left: 12px;
+        }
+        
+        .homecourse-safe>span {
             box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
         }
         
         .homecourse-safe>span:hover {
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
             transition: box-shadow 0.5s;
-        } */
-        
-        .homeclasslist:hover {
+        }
+        /* .homeclasslist:hover {
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5)!important;
             transition: box-shadow 0.5s!important;
-        }
+        } */
         
         .homeintroduce-safe {
             width: 1000px;
@@ -291,8 +297,7 @@
             overflow: hidden;
             box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
         }
-        
-        .homecourse-left {
+        /* .homecourse-left {
             width: 80px;
             height: 350px;
             _padding-left: 25px;
@@ -304,7 +309,7 @@
             position: relative;
             overflow: hidden;
             border-right: 4px solid rgb(245, 245, 245)
-        }
+        } */
         
         .homeintroduce-left:hover {
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);

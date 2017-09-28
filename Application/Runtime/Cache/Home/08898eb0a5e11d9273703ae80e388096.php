@@ -181,6 +181,12 @@
             margin: 0 auto;
         }
         
+        .homecourse-content>p {
+            font-size: 13px;
+            color: #333;
+            margin-left: 12px;
+        }
+        
         .homecourse-safe>span {
             box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
         }
@@ -189,6 +195,10 @@
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
             transition: box-shadow 0.5s;
         }
+        /* .homeclasslist:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5)!important;
+            transition: box-shadow 0.5s!important;
+        } */
         
         .homeintroduce-safe {
             width: 1000px;
@@ -217,25 +227,25 @@
             padding-right: 25px;
             box-sizing: border-box;
             float: left;
-            background: linear-gradient(#fc7382, #fc7de5);
+            background: linear-gradient(#fc7382, #F793B4);
             background-size: cover;
             position: relative;
             overflow: hidden;
             box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
         }
-        
-        .homecourse-left {
-            width: 220px;
+        /* .homecourse-left {
+            width: 80px;
             height: 350px;
-            padding-left: 25px;
-            padding-right: 25px;
+            _padding-left: 25px;
+            _padding-right: 25px;
             box-sizing: border-box;
             float: left;
             background: linear-gradient(#fc7382, #fc7de5);
             background-size: cover;
             position: relative;
             overflow: hidden;
-        }
+            border-right: 4px solid rgb(245, 245, 245)
+        } */
         
         .homeintroduce-left:hover {
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
