@@ -207,16 +207,17 @@
         }
         
         .homecourse-left {
-            width: 220px;
+            width: 80px;
             height: 350px;
-            padding-left: 25px;
-            padding-right: 25px;
+            _padding-left: 25px;
+            _padding-right: 25px;
             box-sizing: border-box;
             float: left;
             background: linear-gradient(#fc7382, #fc7de5);
             background-size: cover;
             position: relative;
             overflow: hidden;
+            border-right: 4px solid rgb(245, 245, 245)
         }
         
         .homeintroduce-left:hover {
@@ -505,11 +506,16 @@
                 <div class="homecourse-safe">
                     <span style="display:block;float:left;width:970px;height:350px;margin-top:50px;">
                     <div class="homecourse-left">
-                        <p style="display:block;color:#fff;border-bottom: solid 1px #fff;padding-bottom:15px;margin-top:28px;margin-bottom:20px;font-size:30px;">阿米巴<br>公开课程</p>
-                        <a class="font-changecolor" href="<?php echo U('Traincourse/index',array('id'=>2));?>" style="color:#8D0840;margin-left:-6px;display:block;margin-bottom:10px;white-space:nowrap;font-size:14px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">【面授】<?php echo ($traincourse["name"]); ?></a>
-                        <!-- <a class="font-changecolor" href="#" style="color:#8D0840;margin-left:-6px;display:block;margin-bottom:10px;white-space:nowrap;font-size:14px;">【面授】阿米巴精英课程</a> -->
+                        <p style="display:block;width:50px;height:50px;line-height:50px;text-align:center;color:#fff;font-size:30px;margin:0 auto;margin-top:25px;">阿</p>
+                        <p style="display:block;width:50px;height:50px;line-height:50px;text-align:center;color:#fff;font-size:30px;margin:0 auto;">米</p>
+                        <p style="display:block;width:50px;height:50px;line-height:50px;text-align:center;color:#fff;font-size:30px;margin:0 auto;">巴</p>
+                        <p style="display:block;width:50px;height:50px;line-height:50px;text-align:center;color:#fff;font-size:30px;margin:0 auto;">公</p>
+                        <p style="display:block;width:50px;height:50px;line-height:50px;text-align:center;color:#fff;font-size:30px;margin:0 auto;">开</p>
+                        <p style="display:block;width:50px;height:50px;line-height:50px;text-align:center;color:#fff;font-size:30px;margin:0 auto;">课</p>
+                        <!-- <p style="display:block;color:#fff;border-bottom: solid 1px #fff;padding-bottom:15px;margin-top:28px;margin-bottom:20px;font-size:30px;">阿米巴<br>公开课程</p> -->
+                        <!-- <a class="font-changecolor" href="<?php echo U('Traincourse/index',array('id'=>2));?>" style="color:#8D0840;margin-left:-6px;display:block;margin-bottom:10px;white-space:nowrap;font-size:14px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">【面授】<?php echo ($traincourse["name"]); ?></a> -->
                     </div>
-                    <a href="<?php echo U('Traincourse/index',array('id'=>2));?>" style="display:block;width:750px;height:350px;background:#fff;float:left;">
+                    <a href="<?php echo U('Traincourse/index',array('id'=>2));?>" style="display:block;width:650px;height:350px;background:#fff;float:left;margin-right:4px;">
                         <div style="width:100%;height:60%;overflow:hidden;">
                             <img src="/Public/Upload/<?php echo ($traincourse["icon"]); ?>" alt="" style="display:block;width:100%;height:100%;transition: all 0.6s;">
                         </div>
@@ -518,6 +524,27 @@
                             <?php echo ($traincourse["overview"]); ?>
                         </span>
                     </a>
+                    <div style="width:236px;height:350px;float:left;background: linear-gradient(#fc7382, #fc7de5);">
+                        <a href="#" style="height:114px;width:100%;float:left;display:bolck;border-bottom:4px solid rgb(245,245,245);">
+                            <div style="width:90%;height:50px;margin-top:32px;margin-left:5%;">
+                                <p style="height:25px;line-height:25px;font-size:16px;color:#fff;">地区：<?php echo ($vv["area"]); ?></p>
+                                <p style="height:25px;line-height:25px;font-size:16px;color:#fff;">时间：<?php echo (date("Y-m-d H:i",$vv["starttime"])); ?></p>
+                            </div>
+                        </a>
+                        <a href="#" style="height:114px;width:100%;float:left;display:bolck;border-bottom:4px solid rgb(245,245,245);">
+                            <div style="width:90%;height:50px;margin-top:32px;margin-left:5%;">
+                                <p style="height:25px;line-height:25px;font-size:16px;color:#fff;">地区：<?php echo ($vv["area"]); ?></p>
+                                <p style="height:25px;line-height:25px;font-size:16px;color:#fff;">时间：<?php echo (date("Y-m-d H:i",$vv["starttime"])); ?></p>
+                            </div>
+                        </a>
+                        <a href="#" style="height:114px;width:100%;float:left;display:bolck;">
+                            <div style="width:90%;height:50px;margin-top:32px;margin-left:5%;">
+                                <p style="height:25px;line-height:25px;font-size:16px;color:#fff;">地区：<?php echo ($vv["area"]); ?></p>
+                                <p style="height:25px;line-height:25px;font-size:16px;color:#fff;">时间：<?php echo (date("Y-m-d H:i",$vv["starttime"])); ?></p>
+                            </div>
+                        </a>
+                    </div>
+
                     </span>
                 </div>
             </div>
@@ -536,16 +563,6 @@
                                 <?php echo ($vv["title"]); ?>
                                 </a>
                             </li><?php endforeach; endif; else: echo "" ;endif; ?>
-                           <!--  <li style="width:100%;height:20px;margin:10px 0;">
-                                <a href="#" style="float:left;width:100%;height:100%;display:block;overflow:hidden;font-size:14px;color:#888;text-overflow:ellipsis;white-space:nowrap;">
-                                阿米巴经营课程阿米巴经营课程阿米巴经营课程
-                                </a>
-                            </li>
-                            <li style="width:100%;height:20px;margin:10px 0;">
-                                <a href="#" style="float:left;width:100%;height:100%;display:block;overflow:hidden;font-size:14px;color:#888;text-overflow:ellipsis;white-space:nowrap;">
-                                阿米巴经营课程阿米巴经营课程阿米巴经营课程
-                                </a>
-                            </li> -->
                         </ul>
                     </div>
                     <div class="homeintroduce-center">
@@ -585,7 +602,8 @@
             </div>
             <div class="homeintroduce-left">
                 <p href="#" style="display:block;color:#fff;border-bottom: solid 1px #fff;padding-bottom:15px;margin-top:28px;margin-bottom:20px;font-size:30px;">阿米巴<br>内训案例</p>
-                <?php if(is_array($incourseright)): $i = 0; $__LIST__ = $incourseright;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vr): $mod = ($i % 2 );++$i;?><a class="font-changecolor" href="<?php echo U('Incourse/detail',array('id'=>3,'inid'=>$vr['id']));?>" style="color:#205A56;margin-left:-6px;display:block;margin-bottom:10px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:14px;">【面授】<?php echo ($vr["title"]); ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
+                <img src="/Public/Upload/2017-09-22/cascades_1.png" alt="" style="width:170px;height:170px;">
+                <!-- <?php if(is_array($incourseright)): $i = 0; $__LIST__ = $incourseright;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vr): $mod = ($i % 2 );++$i;?><a class="font-changecolor" href="<?php echo U('Incourse/detail',array('id'=>3,'inid'=>$vr['id']));?>" style="color:#205A56;margin-left:-6px;display:block;margin-bottom:10px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:14px;">【面授】<?php echo ($vr["title"]); ?></a><?php endforeach; endif; else: echo "" ;endif; ?> -->
                 <!-- <a class="font-changecolor" href="#" style="color:#0994a1;margin-left:-6px;display:block;margin-bottom:10px;white-space:nowrap;font-size:14px;">【面授】阿米巴精英课程</a> -->
             </div>
             </span>
@@ -598,7 +616,8 @@
                 <span style="display:block;float:left;width:1000px;height:350px;margin-top:50px;">
                         <div class="homeresearch-left">
                             <p style="display:block;color:#fff;border-bottom: solid 1px #fff;padding-bottom:15px;margin-top:28px;margin-bottom:20px;font-size:30px;">阿米巴<br>新闻资讯</p>
-                            <?php if(is_array($ambnewsleft)): $i = 0; $__LIST__ = $ambnewsleft;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vl): $mod = ($i % 2 );++$i;?><a class="font-changecolor" href="<?php echo U('Research/detail',array('id'=>4,'aid'=>$vl['id']));?>" style="color:#8D0840;margin-left:-6px;display:block;margin-bottom:10px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:14px;">【面授】<?php echo ($vl["title"]); ?></a><?php endforeach; endif; else: echo "" ;endif; ?>
+                            <img src="/Public/Upload/2017-09-22/news_hot_1.png" alt="" style="width:170px;height:170px;">
+                            <!-- <?php if(is_array($ambnewsleft)): $i = 0; $__LIST__ = $ambnewsleft;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vl): $mod = ($i % 2 );++$i;?><a class="font-changecolor" href="<?php echo U('Research/detail',array('id'=>4,'aid'=>$vl['id']));?>" style="color:#8D0840;margin-left:-6px;display:block;margin-bottom:10px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:14px;">【面授】<?php echo ($vl["title"]); ?></a><?php endforeach; endif; else: echo "" ;endif; ?> -->
                             <!-- <a class="font-changecolor" href="#" style="color:#8D0840;margin-left:-6px;display:block;margin-bottom:10px;white-space:nowrap;font-size:14px;">【面授】阿米巴精英课程</a> -->
                         </div>
                         <div class="homeintroduce-center">

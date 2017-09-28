@@ -289,16 +289,17 @@
         }
         
         .homecourse-left {
-            width: 220px;
+            width: 80px;
             height: 350px;
-            padding-left: 25px;
-            padding-right: 25px;
+            _padding-left: 25px;
+            _padding-right: 25px;
             box-sizing: border-box;
             float: left;
             background: linear-gradient(#fc7382, #fc7de5);
             background-size: cover;
             position: relative;
             overflow: hidden;
+            border-right: 4px solid rgb(245, 245, 245)
         }
         
         .homeintroduce-left:hover {
