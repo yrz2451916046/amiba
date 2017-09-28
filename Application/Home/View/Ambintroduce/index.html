@@ -58,8 +58,8 @@
         
         #transitions {
             position: absolute;
-            top: 0;
-            left: 0;
+            bottom: 0;
+            right: 0;
             z-index: 102;
         }
     </style>
@@ -73,7 +73,11 @@
                 <img src="__PUBLIC__/Upload/2017-09-22/amibajingying.png" alt="" style="width:1000px;height:400px;">
                 <div id="transitions">
                     <ul id="trans2D">
-                        <li><a href="#blinds">Blinds</a></li>
+                        <li style="background:rgba(0,0,0,0.3);">
+                            <a href="#blinds" style="display:block;width:50px;height:50px;background:url(__PUBLIC__/Home/imgs/normal_left.png);">
+                                <!-- <img src="__PUBLIC__/Home/imgs/normal_right.png" alt="" style="width:50px;height:50px;margin:175px auto;cursor:pointer;background:rgba(0,0,0,0.7);"> -->
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <!-- <li>
@@ -102,12 +106,16 @@
                       </span>
                 </li> -->
             </ul>
-            <span class="introducectrl-left" style="display:none;width:50px;height:400px;position:absolute;left:0;top:0;z-index:102;">
-                <img src="__PUBLIC__/Home/imgs/normal_right.png" alt="" style="width:50px;height:50px;margin:175px auto;cursor:pointer;background:rgba(0,0,0,0.7);">
+            <!-- <span id="trans2D" class="introducectrl-left" style="display:none;width:50px;height:400px;position:absolute;left:0;top:0;z-index:102;">
+
+                    <img src="__PUBLIC__/Home/imgs/normal_right.png" alt="" style="width:50px;height:50px;margin:175px auto;cursor:pointer;background:rgba(0,0,0,0.7);">
+
             </span>
-            <span class="introducectrl-right" style="display:none;width:50px;height:400px;position:absolute;left:950px;top:0;z-index:102;">
-                <img src="__PUBLIC__/Home/imgs/normal_left.png" alt="" style="width:50px;height:50px;margin:175px auto;cursor:pointer;background:rgba(0,0,0,0.7);">
-            </span>
+            <span id="trans2D" class="introducectrl-right" style="display:none;width:50px;height:400px;position:absolute;left:950px;top:0;z-index:102;">
+
+                    <img src="__PUBLIC__/Home/imgs/normal_left.png" alt="" style="width:50px;height:50px;margin:175px auto;cursor:pointer;background:rgba(0,0,0,0.7);">
+
+            </span> -->
         </div>
     </div>
 

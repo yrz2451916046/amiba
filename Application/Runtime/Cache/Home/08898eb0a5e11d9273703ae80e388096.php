@@ -8,29 +8,7 @@
     <title>Document</title>
     <script src="/Public/Home/js/jquery-1.8.3.min.js"></script>
     <script src="/Public/Home/js/flux.min.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" charset="utf-8">
-        $(function() {
-            if (!flux.browser.supportsTransitions)
-                alert("Flux Slider requires a browser that supports CSS3 transitions");
-            window.f = new flux.slider('#slider', {
-                autoplay: true,
-                pagination: false
-            });
-            // Setup a listener for user requested transitions
-            $('div#transitions').bind('click', function(event) {
-                event.preventDefault();
-                // If this is a 3D transform and the browser doesn't support 3D then inform the user
-                if ($(event.target).closest('ul').is('ul#trans3d') && !flux.browser.supports3d) {
-                    alert("The '" + event.target.innerHTML + "' transition requires a browser that supports 3D transforms");
-                    return;
-                }
-                window.f.next(event.target.href.split('#')[1]);
-            });
-        });
-        // $(function() {
-        //     window.myFlux = $('#slider').flux();
-        // });
-    </script>
+
     
     <style>
         .about {
@@ -44,7 +22,7 @@
             margin: 0 auto;
             _height: 460px;
             padding-bottom: 40px;
-            background: #fff;
+            _background: #fff;
             margin-top: 40px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
         }
@@ -466,6 +444,14 @@
         .homeresearch-top img:hover {
             transform: scale(1.1)
         }
+        
+        .telephone:hover {
+            background: #20A0FF!important;
+        }
+        
+        .returntop:hover {
+            background: #20A0FF!important;
+        }
     </style>
 </head>
 
@@ -500,63 +486,48 @@
     <div class="about">
         <!-- <p>This is About page!</p> -->
         <div class="about-safe">
-            <ul>
-                <!-- <i style="display:block;width:6px;height:34px;background:#5AB302;float:left;"></i> -->
-                <!-- <span style="width:75px;margin-left:10px;line-height:34px;color:#fff;font-weight:400;">
+
+            <!-- <i style="display:block;width:6px;height:34px;background:#5AB302;float:left;"></i> -->
+            <!-- <span style="width:75px;margin-left:10px;line-height:34px;color:#fff;font-weight:400;">
                       公司介绍&nbsp;/&nbsp;Company introduction
                       </span> -->
-                <div style="width:100%;height:200px;background:rgb(245,245,245);font-size:16px;overflow:hidden;position:relative;">
-                    <i style="width:400px;height:5px;background:rgba(32,160,255, 0.3);transform:rotate(135deg);-webkit-transform:rotate(135deg);position:absolute;top:70px;left:-200px;z-index:2;"></i>
-                    <!-- <i style="display:block;width:6px;height:34px;background:#4B0082;float:left;"></i> -->
-                    <span style="display:block;width:300px;height:80px;float:left;margin:20px 350px;margin-bottom:0;line-height:80px;color:#20A0FF;font-weight:400;font-size:50px;text-align:center;">
-                            公司介绍
-                        </span>
-                    <span style="display:block;width:400px;height:50px;float:left;margin-left:300px;line-height:50px;color:#20A0FF;font-weight:400;font-size:35px;text-align:center;">
-                            Company introduction
-                        </span>
-                    <i style="display:block;width:900px;height:3px;background:#20A0FF;float:left;margin-top:15px;margin-left:50px;"></i>
-                    <i style="display:block;width:800px;height:1px;background:#20A0FF;float:left;margin-top:15px;margin-left:100px;"></i>
-                </div>
-                <div style="width:90%;margin:15px auto;font-size:16px;color:#555;line-height:30px;text-indent:32px">
+            <span style="margin:3px 0;display:block;width:100%;height:50px;float:left;line-height:50px;color:#20A0FF;font-size:24px;background:#fff;border-top:2px solid #20A0FF;">
+                <img src="/Public/Upload/2017-09-22/news.png" style="width:26px;height:26px;margin:12px;float:left;">公司介绍&nbsp;/&nbsp;Company introduction
+            </span>
+            <div style="float:left;background:#fff;">
+                <div style="width:96%;margin:0 2%;margin-top:20px;font-size:16px;color:#555;line-height:30px;text-indent:32px;float:left;background:#fff;">
                     EFC Link（华嗣咨询）是全国领先的专业人力资源管理解决方案供应商。我们以"专业、高效、精准"的态度，为企业提供公开课、内训、中高端人才招聘及管理咨询等综合服务，帮助企业精英人士提升能力、搭建人脉及职业发展平台，竭力推进企业人才发展。<br/>
                 </div>
-                <li style="width:90%;margin:15px auto;font-size:16px;color:#555;line-height:30px;text-indent:32px">
+                <li style="width:96%;margin:20px 2%;font-size:16px;color:#555;line-height:30px;text-indent:32px;float:left;background:#fff;list-style:none;">
                     EFC Link (Huasi Consulting) is one of the national leading professional human resource management solutions providers. We provide public training, internal training, middle and high-end talent hunting, management consulting and other integrated services
                     for enterprises with a "professional, efficient and accurate" attitude, in order to help elites to enhance their abilities, to build their social network and occupation development platform, and to promote the development of enterprise
                     talents.
                 </li>
-            </ul>
-            <ul>
-                <!-- <i style="display:block;width:6px;height:34px;background:#5AB302;float:left;"></i> -->
-                <!-- <span style="width:75px;margin-left:10px;line-height:34px;color:#fff;font-weight:400;">
+            </div>
+
+
+            <!-- <i style="display:block;width:6px;height:34px;background:#5AB302;float:left;"></i> -->
+            <!-- <span style="width:75px;margin-left:10px;line-height:34px;color:#fff;font-weight:400;">
                       网站介绍&nbsp;/&nbsp;Web site introduction
                       </span> -->
-                <div style="width:100%;height:200px;background:rgb(245,245,245);font-size:16px;overflow:hidden;position:relative;">
-                    <i style="width:400px;height:5px;background:rgba(32,160,255, 0.3);transform:rotate(135deg);-webkit-transform:rotate(135deg);position:absolute;top:70px;left:-200px;z-index:2;"></i>
-                    <!-- <i style="display:block;width:6px;height:34px;background:#4B0082;float:left;"></i> -->
-                    <span style="display:block;width:300px;height:80px;float:left;margin:20px 350px;margin-bottom:0;line-height:80px;color:#20A0FF;font-weight:400;font-size:50px;text-align:center;">
-                            网站介绍
-                        </span>
-                    <span style="display:block;width:400px;height:50px;float:left;margin-left:300px;line-height:50px;color:#20A0FF;font-weight:400;font-size:35px;text-align:center;">
-                            Web site introduction
-                        </span>
-                    <i style="display:block;width:900px;height:3px;background:#20A0FF;float:left;margin-top:15px;margin-left:50px;"></i>
-                    <i style="display:block;width:800px;height:1px;background:#20A0FF;float:left;margin-top:15px;margin-left:100px;"></i>
-                </div>
-                <li style="width:90%;margin:10px auto;font-size:16px;color:#555;line-height:30px;text-indent:32px;">
+            <span style="margin:3px 0;display:block;width:100%;height:50px;float:left;line-height:50px;color:#20A0FF;font-size:24px;background:#fff;border-top:2px solid #20A0FF;">
+                <img src="/Public/Upload/2017-09-22/discover.png" style="width:26px;height:26px;margin:12px;float:left;">网站介绍&nbsp;/&nbsp;Web site introduction
+            </span>
+            <div style="float:left;background:#fff;">
+                <li style="width:96%;margin:20px 2%;font-size:16px;color:#555;line-height:30px;text-indent:32px;float:left;background:#fff;list-style:none;">
                     本站建于2017年9月13日，主要用于推广阿米巴经营理念，展示公司的阿米巴培训课程，以及相关内训事物。我是填充词我是填充词我是填充词我是填充词，我是填充词我是填充词我是填充词我是填充词，我是填充词我是填充词我是填充词我是填充词我是填充词我是填充词，我是填充词我是填充词我是填充词我是填充词我是填充词，我是填充词我是填充词我是填充词我是填充词我是填充词我是填充词，我是填充词我是填充词我是填充词我是填充词我是填充词我是填充词。
                 </li>
-            </ul>
+            </div>
         </div>
     </div>
 
     <!-- homepage结束 -->
     <!-- 按钮 -->
-    <span class="telephone" style="display:block;width:170px;height:50px;margin-bottom:10px;position:fixed;top:350px;right:-120px;background:rgb(210,210,210);">
+    <span class="telephone" style="display:block;width:170px;height:50px;margin-bottom:10px;position:fixed;top:350px;right:-120px;background:rgb(210,210,210);transition: all 0.5s ease 0s;">
         <img src="/Public/Home/imgs/telephone.png" alt="" style="width:36px;height:36px;margin:7px;cursor:pointer;float:left;">
         <span style="display:block;width:120px;float:left;height:50px;font-size:20px;color:#fff;line-height:50px;">021-0000000</span>
     </span>
-    <span class="returntop" style="display:block;width:140px;height:50px;margin-bottom:10px;position:fixed;top:410px;right:-90px;background:rgb(210,210,210);">
+    <span class="returntop" style="display:block;width:140px;height:50px;margin-bottom:10px;position:fixed;top:410px;right:-90px;background:rgb(210,210,210);transition: all 0.5s ease 0s;">
         <img src="/Public/Home/imgs/pull_up.png" alt="" style="width:36px;height:36px;margin:7px;cursor:pointer;float:left;">
     </span>
     <!-- 按钮结束 -->
@@ -575,8 +546,8 @@
                 <li>
                     <a class="feet-title" href="<?php echo U('Traincourse/index',array('id'=>2));?>">阿米巴课程</a>
                     <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>" style="margin-top:20px;">课程简介</a>
-                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>">讲师介绍</a>
-                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>">课程报名</a>
+                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>#tec">讲师介绍</a>
+                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>#sup">课程报名</a>
                 </li>
                 <li>
                     <a class="feet-title" href="<?php echo U('Incourse/index',array('id'=>3));?>">阿米巴内训</a>

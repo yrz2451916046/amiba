@@ -426,6 +426,14 @@
         .homeresearch-top img:hover {
             transform: scale(1.1)
         }
+        
+        .telephone:hover {
+            background: #20A0FF!important;
+        }
+        
+        .returntop:hover {
+            background: #20A0FF!important;
+        }
     </style>
 </head>
 
@@ -660,11 +668,11 @@
     
     <!-- homepage结束 -->
     <!-- 按钮 -->
-    <span class="telephone" style="display:block;width:170px;height:50px;margin-bottom:10px;position:fixed;top:350px;right:-120px;background:rgb(210,210,210);">
+    <span class="telephone" style="display:block;width:170px;height:50px;margin-bottom:10px;position:fixed;top:350px;right:-120px;background:rgb(210,210,210);transition: all 0.5s ease 0s;">
         <img src="/Public/Home/imgs/telephone.png" alt="" style="width:36px;height:36px;margin:7px;cursor:pointer;float:left;">
         <span style="display:block;width:120px;float:left;height:50px;font-size:20px;color:#fff;line-height:50px;">021-0000000</span>
     </span>
-    <span class="returntop" style="display:block;width:140px;height:50px;margin-bottom:10px;position:fixed;top:410px;right:-90px;background:rgb(210,210,210);">
+    <span class="returntop" style="display:block;width:140px;height:50px;margin-bottom:10px;position:fixed;top:410px;right:-90px;background:rgb(210,210,210);transition: all 0.5s ease 0s;">
         <img src="/Public/Home/imgs/pull_up.png" alt="" style="width:36px;height:36px;margin:7px;cursor:pointer;float:left;">
     </span>
     <!-- 按钮结束 -->
@@ -683,8 +691,8 @@
                 <li>
                     <a class="feet-title" href="<?php echo U('Traincourse/index',array('id'=>2));?>">阿米巴课程</a>
                     <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>" style="margin-top:20px;">课程简介</a>
-                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>">讲师介绍</a>
-                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>">课程报名</a>
+                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>#tec">讲师介绍</a>
+                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>#sup">课程报名</a>
                 </li>
                 <li>
                     <a class="feet-title" href="<?php echo U('Incourse/index',array('id'=>3));?>">阿米巴内训</a>

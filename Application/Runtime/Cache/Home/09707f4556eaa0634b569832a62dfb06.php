@@ -58,6 +58,12 @@
         .incourse-img:hover {
             transform: scale(1.1);
         }
+        
+        .morebtn:hover {
+            background: #8A2BE2!important;
+            border: 2px solid #fff!important;
+            color: #fff!important;
+        }
     </style>
 
     <style>
@@ -476,6 +482,14 @@
         .homeresearch-top img:hover {
             transform: scale(1.1)
         }
+        
+        .telephone:hover {
+            background: #20A0FF!important;
+        }
+        
+        .returntop:hover {
+            background: #20A0FF!important;
+        }
     </style>
 </head>
 
@@ -516,7 +530,7 @@
             <img src="" alt="" style="display:block;width:100%;height:400px;background:#fff;float:left;box-shadow: 0 5px 10px rgba(0, 0, 0, .1);">
             <!-- 内训流程结束 -->
             <span style="margin:3px 0;margin-top:40px;display:block;width:100%;height:50px;float:left;line-height:50px;color:#8A2BE2;font-size:24px;background:#fff;border-top:2px solid #8A2BE2;">
-                <img src="/Public/Upload/2017-09-22/cascades.png" style="width:26px;height:26px;margin:12px;float:left;">案例见证&nbsp;/&nbsp;Training process
+                <img src="/Public/Upload/2017-09-22/cascades.png" style="width:26px;height:26px;margin:12px;float:left;">案例见证&nbsp;/&nbsp;Case witness
             </span>
             <div class="training-case">
                 <?php if(is_array($incourse)): $i = 0; $__LIST__ = $incourse;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div style="width:100%;height:230px;border-bottom: 1px solid #666;">
@@ -525,10 +539,10 @@
                         </a>
                         <ul style="width:625px;height:180px;float:left;margin:25px 0;">
                             <a href="<?php echo U('Incourse/detail',array('id'=>$id,'inid'=>$vo['id']));?>" style="display:block;height:28px;width:100%;font-size:18px;line-height:28px;font-weight:400;"><?php echo ($vo["title"]); ?></a>
-
                             <li style="width:100%;height:28px;line-height:28px;font-size:14px;">时间：<?php echo (date("Y-m-d",$vo["addtime"])); ?></li>
                             <li style="width:100%;height:56px;line-height:28px;font-size:14px;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;margin-top:12px;"><?php echo ($vo["abstract"]); ?></li>
-                            <a href="<?php echo U('Incourse/detail',array('id'=>$id,'inid'=>$vo['id']));?>" style="display:block;width:80px;height:35px;border:2px solid #8A2BE2;margin-top:17px;line-height:40px;text-align:center;font-size:16px;color:#8A2BE2;">    
+                            <a href="<?php echo U('Incourse/detail',array('id'=>$id,'inid'=>$vo['id']));?>" style="display:block;width:80px;height:35px;border:2px solid #8A2BE2;margin-top:17px;line-height:40px;text-align:center;font-size:16px;color:#8A2BE2;background:#fff;transition: all 0.5s ease 0s;"
+                                class="morebtn">    
                           MORE
                         </a>
                         </ul>
@@ -542,7 +556,8 @@
                             <a href="<?php echo U('Incourse/detail',array('id'=>$id,'inid'=>$vo['id']));?>" style="display:block;height:28px;width:100%;font-size:18px;line-height:28px;font-weight:400;"><?php echo ($vo["title"]); ?></a>
                             <li style="width:100%;height:28px;line-height:28px;font-size:14px;">时间：<?php echo (date("Y-m-d",$vo["addtime"])); ?></li>
                             <li style="width:100%;height:56px;line-height:28px;font-size:14px;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;margin-top:12px;"><?php echo ($vo["abstract"]); ?></li>
-                            <a href="<?php echo U('Incourse/detail',array('id'=>$id,'inid'=>$vo['id']));?>" style="display:block;width:80px;height:35px;border:2px solid #8A2BE2;margin-top:17px;line-height:40px;text-align:center;font-size:16px;color:#8A2BE2;">    
+                            <a href="<?php echo U('Incourse/detail',array('id'=>$id,'inid'=>$vo['id']));?>" style="display:block;width:80px;height:35px;border:2px solid #8A2BE2;margin-top:17px;line-height:40px;text-align:center;font-size:16px;color:#8A2BE2;background:#fff;transition: all 0.5s ease 0s;"
+                                class="morebtn">    
                           MORE
                         </a>
                         </ul>
@@ -554,11 +569,11 @@
 
     <!-- homepage结束 -->
     <!-- 按钮 -->
-    <span class="telephone" style="display:block;width:170px;height:50px;margin-bottom:10px;position:fixed;top:350px;right:-120px;background:rgb(210,210,210);">
+    <span class="telephone" style="display:block;width:170px;height:50px;margin-bottom:10px;position:fixed;top:350px;right:-120px;background:rgb(210,210,210);transition: all 0.5s ease 0s;">
         <img src="/Public/Home/imgs/telephone.png" alt="" style="width:36px;height:36px;margin:7px;cursor:pointer;float:left;">
         <span style="display:block;width:120px;float:left;height:50px;font-size:20px;color:#fff;line-height:50px;">021-0000000</span>
     </span>
-    <span class="returntop" style="display:block;width:140px;height:50px;margin-bottom:10px;position:fixed;top:410px;right:-90px;background:rgb(210,210,210);">
+    <span class="returntop" style="display:block;width:140px;height:50px;margin-bottom:10px;position:fixed;top:410px;right:-90px;background:rgb(210,210,210);transition: all 0.5s ease 0s;">
         <img src="/Public/Home/imgs/pull_up.png" alt="" style="width:36px;height:36px;margin:7px;cursor:pointer;float:left;">
     </span>
     <!-- 按钮结束 -->
@@ -577,8 +592,8 @@
                 <li>
                     <a class="feet-title" href="<?php echo U('Traincourse/index',array('id'=>2));?>">阿米巴课程</a>
                     <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>" style="margin-top:20px;">课程简介</a>
-                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>">讲师介绍</a>
-                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>">课程报名</a>
+                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>#tec">讲师介绍</a>
+                    <a class="feet-content" href="<?php echo U('Traincourse/index',array('id'=>2));?>#sup">课程报名</a>
                 </li>
                 <li>
                     <a class="feet-title" href="<?php echo U('Incourse/index',array('id'=>3));?>">阿米巴内训</a>
