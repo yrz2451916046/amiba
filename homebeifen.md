@@ -162,25 +162,19 @@
             height: 400px;
             margin: 0 auto;
         }
-        
-        .homecourse-content>p {
-            font-size: 13px;
-            color: #333;
-            margin-left: 12px;
-        }
-        
-        .homecourse-safe>span {
+        /* .homecourse-safe>span {
             box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
         }
         
         .homecourse-safe>span:hover {
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
             transition: box-shadow 0.5s;
-        }
-        /* .homeclasslist:hover {
+        } */
+        
+        .homeclasslist:hover {
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5)!important;
             transition: box-shadow 0.5s!important;
-        } */
+        }
         
         .homeintroduce-safe {
             width: 1000px;
@@ -215,7 +209,8 @@
             overflow: hidden;
             box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
         }
-        /* .homecourse-left {
+        
+        .homecourse-left {
             width: 80px;
             height: 350px;
             _padding-left: 25px;
@@ -227,7 +222,7 @@
             position: relative;
             overflow: hidden;
             border-right: 4px solid rgb(245, 245, 245)
-        } */
+        }
         
         .homeintroduce-left:hover {
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
@@ -523,36 +518,47 @@
 
             <div id="homecourse">
                 <div class="homecourse-safe">
-                    <span style="display:block;float:left;width:970px;height:350px;margin-top:50px;background:#fff;">
-                        <div style="width:100%;height:220px;float:left;overflow:hidden;">
-                            <img src="__PUBLIC__/Upload/2017-09-22/classbanner1.jpg" alt="" style="width:100%;height:220px;float:left;transition: all 0.6s;">
+                    <span style="display:block;float:left;width:970px;height:350px;margin-top:50px;">
+                    <div class="homecourse-left" style="box-shadow: 0 5px 10px rgba(0, 0, 0, .1);">
+                        <p style="display:block;width:50px;height:50px;line-height:50px;text-align:center;color:#fff;font-size:30px;margin:0 auto;margin-top:25px;">阿</p>
+                        <p style="display:block;width:50px;height:50px;line-height:50px;text-align:center;color:#fff;font-size:30px;margin:0 auto;">米</p>
+                        <p style="display:block;width:50px;height:50px;line-height:50px;text-align:center;color:#fff;font-size:30px;margin:0 auto;">巴</p>
+                        <p style="display:block;width:50px;height:50px;line-height:50px;text-align:center;color:#fff;font-size:30px;margin:0 auto;">公</p>
+                        <p style="display:block;width:50px;height:50px;line-height:50px;text-align:center;color:#fff;font-size:30px;margin:0 auto;">开</p>
+                        <p style="display:block;width:50px;height:50px;line-height:50px;text-align:center;color:#fff;font-size:30px;margin:0 auto;">课</p>
+                        <!-- <p style="display:block;color:#fff;border-bottom: solid 1px #fff;padding-bottom:15px;margin-top:28px;margin-bottom:20px;font-size:30px;">阿米巴<br>公开课程</p> -->
+                        <!-- <a class="font-changecolor" href="{:U('Traincourse/index',array('id'=>2))}" style="color:#8D0840;margin-left:-6px;display:block;margin-bottom:10px;white-space:nowrap;font-size:14px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">【面授】{$traincourse.name}</a> -->
+                    </div>
+                    <a href="{:U('Traincourse/index',array('id'=>2))}" style="display:block;width:650px;height:350px;background:#fff;float:left;margin-right:4px;box-shadow: 0 5px 10px rgba(0, 0, 0, .1);">
+                        <div style="width:100%;height:60%;overflow:hidden;">
+                            <img src="__PUBLIC__/Upload/{$traincourse.icon}" alt="" style="display:block;width:100%;height:100%;transition: all 0.6s;">
                         </div>
-                        <div style="width:100%;height:130px;float:left;background:rgb(230,230,230);">
-                            <div class="homecourse-content" style="width:32%;height:100px;float:left;margin:15px 0;border-right:1px dashed #666;">
-                                <p>时间：2017-09-22 00:09</p>
-                                <p>地区：深圳</p>
-                                <p>地址：深圳富苑皇冠假日酒店</p>
-                                <p>出行：地铁龙岗线老街站</p>
-                                <p>语言：中文</p>
-                                <p>咨询：Vinky：021-61536928；13918141008</p>
+                        <p style="height:40px;padding-left:20px;font-size:22px;line-height:40px;color:#333;">课程简介</p>
+                        <span style="display:block;width:94%;height:80px;font-size:14px;line-height:24px;text-indent:28px;padding-left:20px;padding-right:20px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;">
+                            {$traincourse.overview}
+                        </span>
+                    </a>
+                    <div style="width:236px;height:350px;float:left;background:#fff;">
+                        <a class="homeclasslist" href="#" style="box-shadow: 0 3px 10px rgba(0, 0, 0, .1);height:114px;width:100%;float:left;display:bolck;margin-bottom:4px;background:#fc7382;">
+                            <div style="width:90%;height:50px;margin-top:32px;margin-left:5%;">
+                                <p style="height:25px;line-height:25px;font-size:16px;color:#fff;">地区：{$vv.area}</p>
+                                <p style="height:25px;line-height:25px;font-size:16px;color:#fff;">时间：{$vv.starttime|date="Y-m-d H:i",###}</p>
                             </div>
-                            <div class="homecourse-content" style="width:32%;height:100px;float:left;margin:15px 0;border-right:1px dashed #666;">
-                                <p>时间：2017-09-22 00:09</p>
-                                <p>地区：深圳</p>
-                                <p>地址：深圳富苑皇冠假日酒店</p>
-                                <p>出行：地铁龙岗线老街站</p>
-                                <p>语言：中文</p>
-                                <p>咨询：Vinky：021-61536928；13918141008</p>
+                        </a>
+                        <a class="homeclasslist" href="#" style="box-shadow: 0 3px 10px rgba(0, 0, 0, .1);height:114px;width:100%;float:left;display:bolck;margin-bottom:4px;background:#fc7382;">
+                            <div style="width:90%;height:50px;margin-top:32px;margin-left:5%;">
+                                <p style="height:25px;line-height:25px;font-size:16px;color:#fff;">地区：{$vv.area}</p>
+                                <p style="height:25px;line-height:25px;font-size:16px;color:#fff;">时间：{$vv.starttime|date="Y-m-d H:i",###}</p>
                             </div>
-                            <div class="homecourse-content" style="width:32%;height:100px;float:left;margin:15px 0;">
-                                <p>时间：2017-09-22 00:09</p>
-                                <p>地区：深圳</p>
-                                <p>地址：深圳富苑皇冠假日酒店</p>
-                                <p>出行：地铁龙岗线老街站</p>
-                                <p>语言：中文</p>
-                                <p>咨询：Vinky：021-61536928；13918141008</p>
+                        </a>
+                        <a class="homeclasslist" href="#" style="box-shadow: 0 3px 10px rgba(0, 0, 0, .1);height:114px;width:100%;float:left;display:bolck;background:#fc7382;">
+                            <div style="width:90%;height:50px;margin-top:32px;margin-left:5%;">
+                                <p style="height:25px;line-height:25px;font-size:16px;color:#fff;">地区：{$vv.area}</p>
+                                <p style="height:25px;line-height:25px;font-size:16px;color:#fff;">时间：{$vv.starttime|date="Y-m-d H:i",###}</p>
                             </div>
-                        </div>
+                        </a>
+                    </div>
+
                     </span>
                 </div>
             </div>

@@ -221,14 +221,23 @@
             margin: 0 auto;
         }
         
-        .homecourse-safe>span {
+        .homecourse-content>p {
+            font-size: 13px;
+            color: #333;
+            margin-left: 12px;
+        }
+        /* .homecourse-safe>span {
             box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
         }
         
         .homecourse-safe>span:hover {
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
             transition: box-shadow 0.5s;
-        }
+        } */
+        /* .homeclasslist:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5)!important;
+            transition: box-shadow 0.5s!important;
+        } */
         
         .homeintroduce-safe {
             width: 1000px;
@@ -257,14 +266,13 @@
             padding-right: 25px;
             box-sizing: border-box;
             float: left;
-            background: linear-gradient(#fc7382, #fc7de5);
+            background: linear-gradient(#fc7382, #F793B4);
             background-size: cover;
             position: relative;
             overflow: hidden;
             box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
         }
-        
-        .homecourse-left {
+        /* .homecourse-left {
             width: 80px;
             height: 350px;
             _padding-left: 25px;
@@ -276,7 +284,7 @@
             position: relative;
             overflow: hidden;
             border-right: 4px solid rgb(245, 245, 245)
-        }
+        } */
         
         .homeintroduce-left:hover {
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
@@ -557,8 +565,8 @@
                     <li style="width:100%;float:left;">
                         <!-- <h2 style="height:40px;line-height:40px;">课程详情：</h2> -->
                         <span style="display:block;width:100%;_height:300px;">
-                            <div class="other-timer" style="width:100%;height:120px;font-size:12px;margin-top:20px;">
-                                <div style="width:32%;float:left;border-right:1px dashed #666;margin-top:10px;">
+                            <div class="other-timer" style="width:100%;height:120px;font-size:12px;margin-top:20px;background:rgb(230, 230, 230);">
+                                <div style="width:32%;float:left;border-right:1px dashed #666;margin-left:10px;margin-top:10px;">
                                     <p>时间：<?php echo (date("Y-m-d H:i",$vv["starttime"])); ?></p>
                                     <p>地区：<?php echo ($vv["area"]); ?></p>
                                     <p>地址：<?php echo ($vv["address"]); ?></p>
@@ -583,7 +591,7 @@
                                     <p>咨询：<?php echo ($vv["consult"]); ?></p>
                                 </div>
                             </div>
-                            <span class="sign-up-button" style="cursor:pointer;display:block;width:100px;height:40px;margin:12px auto;line-height:40px;text-align:center;background:#20A0FF;color:#fff;font-size:14px;font-weight:600;">
+                            <span class="sign-up-button" style="cursor:pointer;display:block;width:100px;height:40px;margin:12px auto;line-height:40px;text-align:center;background:#20A0FF;color:#fff;font-size:14px;font-weight:600;border-radius:20px;">
                                 课程报名
                             </span>
                         <p style="font-size:16px;color:#444;border-bottom:1px solid #888;height:30px;line-height:30px;margin:10px 0;">课程概述&nbsp;/&nbsp;Overview</p>

@@ -244,14 +244,18 @@
             height: 400px;
             margin: 0 auto;
         }
-        
-        .homecourse-safe>span {
+        /* .homecourse-safe>span {
             box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
         }
         
         .homecourse-safe>span:hover {
             box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
             transition: box-shadow 0.5s;
+        } */
+        
+        .homeclasslist:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5)!important;
+            transition: box-shadow 0.5s!important;
         }
         
         .homeintroduce-safe {
@@ -281,7 +285,7 @@
             padding-right: 25px;
             box-sizing: border-box;
             float: left;
-            background: linear-gradient(#fc7382, #fc7de5);
+            background: linear-gradient(#fc7382, #F793B4);
             background-size: cover;
             position: relative;
             overflow: hidden;
