@@ -570,7 +570,7 @@
                                         <img src="/Public/Upload/<?php echo ($vo["icon"]); ?>" alt="" style="width:450px;height:125px;float:left;transition: all 0.6s;">
                                     </div>
                                     <p class="positionflash" style="width:100%;height:100%;background:rgba(255,255,255,0.8);position:absolute;top:125px;">
-                                        <span style="display:block;width:400px;height:40px;margin-left:25px;line-height:40px;font-size:16px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?php echo ($vo["title"]); ?></span>
+                                        <span style="display:block;width:400px;height:40px;margin-left:25px;line-height:40px;text-align:center;font-size:16px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?php echo ($vo["title"]); ?></span>
                     </p>
                     </a><?php endforeach; endif; else: echo "" ;endif; ?>
                 </div>
@@ -581,7 +581,7 @@
                                     <img src="/Public/Upload/<?php echo ($vd1["icon"]); ?>" alt="" style="width:215px;height:125px;float:left;transition: all 0.6s;">
                                 </div>
                                 <p class="positionflash" style="width:100%;height:100%;background:rgba(255,255,255,0.8);position:absolute;top:125px;">
-                                    <span style="display:block;width:187px;height:40px;margin-left:14px;line-height:40px;font-size:14px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?php echo ($vd1["title"]); ?></span>
+                                    <span style="display:block;width:187px;height:40px;margin-left:14px;line-height:40px;text-align:center;font-size:14px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?php echo ($vd1["title"]); ?></span>
                                 </p>
                             </a>
                         </div><?php endforeach; endif; else: echo "" ;endif; ?>
@@ -592,7 +592,7 @@
                                 </div>
                                 <!-- <img src="/Public/Upload/<?php echo ($vd2["icon"]); ?>" alt="" style="width:215px;height:125px;float:left;"> -->
                                 <p class="positionflash" style="width:100%;height:100%;background:rgba(255,255,255,0.8);position:absolute;top:125px;">
-                                    <span style="display:block;width:187px;height:40px;margin-left:14px;line-height:40px;font-size:14px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?php echo ($vd2["title"]); ?></span>
+                                    <span style="display:block;width:187px;height:40px;margin-left:14px;line-height:40px;text-align:center;font-size:14px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?php echo ($vd2["title"]); ?></span>
                                 </p>
                             </a>
                         </div><?php endforeach; endif; else: echo "" ;endif; ?>
@@ -626,7 +626,7 @@
                                     </div>
                                     <!-- <img src="/Public/Upload/<?php echo ($vt["icon"]); ?>" alt="" style="width:450px;height:125px;float:left;"> -->
                                     <p class="positionflash" style="width:100%;height:100%;background:rgba(255,255,255,0.8);position:absolute;top:125px;">
-                                        <span style="display:block;width:400px;height:40px;margin-left:25px;line-height:40px;font-size:16px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?php echo ($vt["title"]); ?></span>
+                                        <span style="display:block;width:400px;height:40px;margin-left:25px;line-height:40px;text-align:center;font-size:16px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?php echo ($vt["title"]); ?></span>
                 </p>
                 </a><?php endforeach; endif; else: echo "" ;endif; ?>
             </div>
@@ -638,7 +638,7 @@
                             </div>
                             <!-- <img src="/Public/Upload/<?php echo ($vo["icon"]); ?>" alt="" style="width:215px;height:125px;float:left;"> -->
                             <p class="positionflash" style="width:100%;height:100%;background:rgba(255,255,255,0.8);position:absolute;top:125px;">
-                                <span style="display:block;width:187px;height:40px;margin-left:14px;line-height:40px;font-size:14px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?php echo ($vo["title"]); ?></span>
+                                <span style="display:block;width:187px;height:40px;margin-left:14px;line-height:40px;text-align:center;font-size:14px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?php echo ($vo["title"]); ?></span>
                             </p>
                         </a>
                     </div><?php endforeach; endif; else: echo "" ;endif; ?>
@@ -649,7 +649,7 @@
                             </div>
                             <!-- <img src="/Public/Upload/<?php echo ($vo["icon"]); ?>" alt="" style="width:215px;height:125px;float:left;"> -->
                             <p class="positionflash" style="width:100%;height:100%;background:rgba(255,255,255,0.8);position:absolute;top:125px;">
-                                <span style="display:block;width:187px;height:40px;margin-left:14px;line-height:40px;font-size:14px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?php echo ($vo["title"]); ?></span>
+                                <span style="display:block;width:187px;height:40px;margin-left:14px;line-height:40px;text-align:center;font-size:14px;color:#666;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?php echo ($vo["title"]); ?></span>
                             </p>
                         </a>
                     </div><?php endforeach; endif; else: echo "" ;endif; ?>

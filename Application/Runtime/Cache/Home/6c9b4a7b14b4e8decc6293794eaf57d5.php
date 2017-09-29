@@ -547,8 +547,8 @@
                 <img src="/Public/Upload/2017-09-22/amibajingying.png" alt="" style="width:1000px;height:400px;">
                 <div id="transitions">
                     <ul id="trans2D">
-                        <li style="background:rgba(0,0,0,0.3);">
-                            <a href="#blinds" style="display:block;width:50px;height:50px;background:url(/Public/Home/imgs/normal_left.png);">
+                        <li>
+                            <a href="#blinds" style="display:block;width:50px;height:50px;background:url(/Public/Upload/2017-09-22/nextpage.png);">
                                 <!-- <img src="/Public/Home/imgs/normal_right.png" alt="" style="width:50px;height:50px;margin:175px auto;cursor:pointer;background:rgba(0,0,0,0.7);"> -->
                             </a>
                         </li>
@@ -593,7 +593,7 @@
         </div>
     </div>
 
-    <script>
+    <!-- <script>
         $(function() {
             $(".introduce-safe").mouseover(function() {
                 $(".introducectrl-left").fadeIn();
@@ -603,27 +603,27 @@
                     $(".introducectrl-left").fadeOut();
                     $(".introducectrl-right").fadeOut();
                 })
-                // console.log($showleft)
-                // $(".introducectrl-right img").click(function() {
-                //     var $showleft = $(".introduce-show").css("left")
-                //     if ($showleft == "0px") {
-                //         // alert(111)
-                //         $(".introduce-show").animate({
-                //             "left": "-1000px"
-                //         }, 500)
-                //     }
-                // })
-                // $(".introducectrl-left img").click(function() {
-                //     $showleft = $(".introduce-show").css("left")
-                //         // alert($showleft)
-                //     if ($showleft == "-1000px") {
-                //         $(".introduce-show").animate({
-                //             "left": "0px"
-                //         }, 500)
-                //     }
-                // })
+                console.log($showleft)
+                $(".introducectrl-right img").click(function() {
+                    var $showleft = $(".introduce-show").css("left")
+                    if ($showleft == "0px") {
+                        // alert(111)
+                        $(".introduce-show").animate({
+                            "left": "-1000px"
+                        }, 500)
+                    }
+                })
+                $(".introducectrl-left img").click(function() {
+                    $showleft = $(".introduce-show").css("left")
+                        // alert($showleft)
+                    if ($showleft == "-1000px") {
+                        $(".introduce-show").animate({
+                            "left": "0px"
+                        }, 500)
+                    }
+                })
         })
-    </script>
+    </script> -->
 
     <!-- homepage结束 -->
     <!-- 按钮 -->
